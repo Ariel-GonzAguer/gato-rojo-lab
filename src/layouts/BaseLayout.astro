@@ -1,0 +1,71 @@
+---
+// tipos
+import type { Props } from "../types/types.ts";
+
+// estilos globales
+import "../styles/global.css";
+
+// view transition
+import { ClientRouter } from "astro:transitions";
+// componentes
+import StructuredData from "../componentes/StructuredData.astro";
+// analítica
+import Analytics from "@vercel/analytics/astro";
+const { pageTitle }: Props = Astro.props;
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="desarrollo web, minimalista, frontend, JAMStack, costa rica"
+    />
+    <meta name="language" content="es" />
+    <title>{pageTitle}</title>
+
+    <!-- Meta descripción -->
+    <meta
+      name="description"
+      content="Gato Rojo Lab: Desarrollo web minimalista y práctico."
+    />
+
+    <!-- Meta para redes sociales (Open Graph) -->
+    <meta property="og:title" content={pageTitle} />
+    <meta
+      property="og:description"
+      content="Gato Rojo Lab: Desarrollo web minimalista y práctico."
+    />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:url" content="https://gatorojolab.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Gato Rojo Lab" />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href="https://gatorojolab.com" />
+    <link rel="alternate" hreflang="en" href="https://gatorojolab.com/en" />
+    <link rel="alternate" hreflang="x-default" href="https://gatorojolab.com" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gatorojolab.com" />
+
+    <!-- Structured Data -->
+    <StructuredData />
+
+    <ClientRouter />
+  </head>
+
+  <body>
+    <slot />
+    <Analytics />
+
+    <script>
+      import "../scripts/menu.ts";
+    </script>
+  </body>
+</html>
