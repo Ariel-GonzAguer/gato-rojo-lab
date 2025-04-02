@@ -12,6 +12,9 @@ import { ClientRouter } from "astro:transitions";
 import StructuredData from "../componentes/StructuredData.astro";
 import Header from "../componentes/Header copy.astro";
 
+// contenedor estilos
+import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
+
 // analítica
 import Analytics from "@vercel/analytics/astro";
 const { pageTitle }: Props = Astro.props;
@@ -62,14 +65,16 @@ const { pageTitle }: Props = Astro.props;
 
     <ClientRouter />
   </head>
+  <!-- <ContenedorEstilos client:only="react">
+    <body>
+      <Header />
+      <slot />
+      <Analytics />
 
-  <body>
-    <Header />
-    <slot />
-    <Analytics />
-
-    <script>
-      import "../scripts/menu.ts";
-    </script>
-  </body>
+      <script>
+        import "../scripts/menu.ts";
+      </script>
+    </body>
+  </ContenedorEstilos> -->
+  <h1>Página en construcción 🚀🚀</h1> <!-- TODO: quitar en desarrollo local y al terminar el proyecto -->
 </html>

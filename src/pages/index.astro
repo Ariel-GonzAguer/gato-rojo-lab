@@ -6,8 +6,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ContenedorBotonesEstilos from "../componentes/ContenedorBotonesEstilos";
 ---
 
+<style>
+  .index {
+    height: 100vh;
+  }
+</style>
+
 <BaseLayout pageTitle="Home">
-  <h1>Astro</h1>
-  <h2>Elige un estilo</h2>
-  <ContenedorBotonesEstilos client:only="react" />
+  <section class="index">
+    <h1>Astro</h1>
+    <h2>Elige un estilo</h2>
+    <ContenedorBotonesEstilos client:only="react" />
+  </section>
 </BaseLayout>

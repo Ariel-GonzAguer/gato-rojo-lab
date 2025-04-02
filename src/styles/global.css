@@ -2,19 +2,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all 0.5s ease-out allow-discrete;
 }
 
 html {
-  color: black;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto_Mono", Arial, Helvetica, sans-serif;
   cursor: default;
 }
 
 body {
   scroll-behavior: smooth;
-  padding: 1rem;
   line-height: 1.5;
   text-align: center;
+  height: 100vh;
 }
 
 h1,
@@ -24,9 +24,6 @@ h4,
 h5,
 h6 {
   margin: 1rem auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: red;
-  
 }
 
 h1 {
@@ -35,13 +32,76 @@ h1 {
 
 h2 {
   font-size: 1.3rem;
-  max-width: 95%;
 }
 
 /* tipografías */
 @font-face {
-  font-family: "Lato";
-  src: local("Lato"), url(/tipografías/Lato/Lato-Regular.ttf) format("truetype");
+  font-family: "Roboto_Mono";
+  src: local("Roboto_Mono"),
+    url(assets/fonts/Roboto_Mono/Roboto_Mono.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open_Sans";
+  src: local("OpenSans-Regular"),
+    url(assets/fonts/Open_Sans/OpenSans-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Kanit_Regular";
+  src: local("Kanit_Regular"),
+    url(assets/fonts/Kanit/Kanit_Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Lexend_Mega";
+  src: local("Lexend_Mega_Regular"),
+    url(assets/fonts/Lexend_Mega/Lexend_Mega_Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "PressStart2P";
+  src: local("PressStart2P_Regular"),
+    url(assets/fonts/PressStart2P/PressStart2P_Regular.ttf) format("truetype");
+}
+
+
+/* contenedor estilos */
+/* desenfoque al cambiar de estilos */
+.blur {
+  filter: blur(5px); /* Ajusta el valor según la intensidad del desenfoque deseada */
+  transition: filter 0.5s ease; /* Transición suave para el desenfoque */
+}
+
+.dark {
+  font-family: "Roboto_Mono", Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.light {
+  font-family: "Open_Sans", Arial, Helvetica, sans-serif;
+  color: red;
+
+  & a {
+    color: palevioletred;
+  }
+
+  /* & h2 {
+    color: yellow;
+  } */
+}
+
+.neumorphism {
+  color: blue;
+}
+
+.neubrutalism {
+  color: green;
+}
+
+.gamer {
+  color: orange;
 }
 
 /* hamburger styles (hamburger menu) */
@@ -66,7 +126,6 @@ h2 {
   margin: 0;
 
   & a {
-    color: black;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -92,14 +151,12 @@ h2 {
       display: inline-block;
       margin: 1rem 2rem 0;
       padding: 0 0.5rem;
-      border-bottom: 3px solid orange;
       width: auto;
 
-      &:hover {
-        color: lightgreen;
+      /* &:hover {
         background-color: black;
         border-bottom: 3px solid lightgreen;
-      }
+      } */
     }
   }
 
