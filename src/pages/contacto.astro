@@ -1,9 +1,17 @@
 ---
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// componentes
+import ContactFormEmailJS from "../componentes/ContactFormEmailJS";
 ---
 
 <BaseLayout pageTitle="Acerca de">
-  <h1>Acerca de</h1>
-  <h2>Minimalista</h2>
+  <h1>Contacto</h1>
+  <p>
+    Me encantaría trabajar con usted para crear ese proyecto web que siempre ha
+    estado en su mente.
+  </p>
+  <p>Envíeme un mensaje y le contactaré lo antes posible.</p>
+  <ContactFormEmailJS client:only="react" />
 </BaseLayout>

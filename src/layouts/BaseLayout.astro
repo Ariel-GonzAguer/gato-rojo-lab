@@ -7,8 +7,11 @@ import "../styles/global.css";
 
 // view transition
 import { ClientRouter } from "astro:transitions";
+
 // componentes
 import StructuredData from "../componentes/StructuredData.astro";
+import Header from "../componentes/Header copy.astro";
+
 // analítica
 import Analytics from "@vercel/analytics/astro";
 const { pageTitle }: Props = Astro.props;
@@ -61,6 +64,7 @@ const { pageTitle }: Props = Astro.props;
   </head>
 
   <body>
+    <Header />
     <slot />
     <Analytics />
 

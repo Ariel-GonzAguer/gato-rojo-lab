@@ -1,9 +1,13 @@
 ---
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// componentes
+import ContenedorBotonesEstilos from "../componentes/ContenedorBotonesEstilos";
 ---
 
 <BaseLayout pageTitle="Home">
   <h1>Astro</h1>
-  <h2>Minimalista</h2>
+  <h2>Elige un estilo</h2>
+  <ContenedorBotonesEstilos client:only="react" />
 </BaseLayout>
