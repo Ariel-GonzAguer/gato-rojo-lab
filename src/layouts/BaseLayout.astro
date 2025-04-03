@@ -10,7 +10,7 @@ import { ClientRouter } from "astro:transitions";
 
 // componentes
 import StructuredData from "../componentes/StructuredData.astro";
-import Header from "../componentes/Header copy.astro";
+import Header from "../componentes/Header.astro";
 
 // contenedor estilos
 import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
@@ -68,12 +68,14 @@ const { pageTitle }: Props = Astro.props;
   <ContenedorEstilos client:only="react">
     <body>
       <Header />
-      <slot />
-      <Analytics />
+      <main>
+        <slot />
+        <Analytics />
 
-      <script>
-        import "../scripts/menu.ts";
-      </script>
+        <script>
+          import "../scripts/menu.ts";
+        </script>
+      </main>
     </body>
   </ContenedorEstilos>
   <!-- 

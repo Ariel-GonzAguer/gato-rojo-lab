@@ -6,5 +6,6 @@ export default function ContenedorEstilos({
   children: React.ReactNode;
 }) {
   const { diseñoInStore } = useStore();
-  return <div className={diseñoInStore}>{children}</div>;
+  return <div className={diseñoInStore}>{children}
+  </div>;
 }

@@ -1,0 +1,176 @@
+Solución al problema del menú hamburguesa con ContenedorEstilos
+Ahora entiendo el problema principal. El componente ContenedorEstilos.tsx está interfiriendo con el funcionamiento del menú hamburguesa. Esto ocurre porque:
+
+ContenedorEstilos está envolviendo todo el contenido con client:only="react", lo que significa que React se encarga de renderizar ese contenido en el cliente.
+
+Cuando el script del menú hamburguesa intenta acceder a los elementos DOM, estos están dentro del componente React y posiblemente no están disponibles cuando el script se ejecuta, o React está reemplazando/modificando el DOM.
+
+Solución:
+Necesitamos modificar la estructura para que el Header (con el menú hamburguesa) esté fuera del componente ContenedorEstilos:
+
+1. Modifica BaseLayout.astro:
+---
+// tipos
+import type { Props } from "../types/types.ts";
+
+// estilos globales
+import "../styles/global.css";
+
+// view transition
+import { ClientRouter } from "astro:transitions";
+
+// componentes
+import StructuredData from "../componentes/StructuredData.astro";
+import Header from "../componentes/Header.astro";
+
+// contenedor estilos
+import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
+
+// analítica
+import Analytics from "@vercel/analytics/astro";
+const { pageTitle }: Props = Astro.props;
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="desarrollo web, minimalista, frontend, JAMStack, costa rica"
+    />
+    <meta name="language" content="es" />
+    <title>{pageTitle}</title>
+
+    <!-- Meta descripción -->
+    <meta
+      name="description"
+      content="Gato Rojo Lab: Desarrollo web minimalista y práctico."
+    />
+
+    <!-- Meta para redes sociales (Open Graph) -->
+    <meta property="og:title" content={pageTitle} />
+    <meta
+      property="og:description"
+      content="Gato Rojo Lab: Desarrollo web minimalista y práctico."
+    />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:url" content="https://gatorojolab.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Gato Rojo Lab" />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="es" href="https://gatorojolab.com" />
+    <link rel="alternate" hreflang="en" href="https://gatorojolab.com/en" />
+    <link rel="alternate" hreflang="x-default" href="https://gatorojolab.com" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gatorojolab.com" />
+
+    <!-- Structured Data -->
+    <StructuredData />
+
+    <ClientRouter />
+  </head>
+  <body>
+    <!-- Header fuera del ContenedorEstilos -->
+    <Header />
+    
+    <!-- ContenedorEstilos solo para el contenido principal -->
+    <ContenedorEstilos client:only="react">
+      <main>
+        <slot />
+      </main>
+    </ContenedorEstilos>
+    
+    <Analytics />
+
+    <script>
+      import "../scripts/menu.ts";
+    </script>
+  </body>
+</html>
+
+Copy
+
+
+src\layouts\BaseLayout.astro
+2. Simplifica el script menu.ts:
+document.addEventListener("astro:page-load", () => {
+  console.log("Script de menú cargado");
+  
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      console.log("Clic en hamburguesa detectado");
+      navLinks.classList.toggle("expanded");
+    });
+  } else {
+    console.error("No se encontraron los elementos del menú:", { hamburger, navLinks });
+  }
+});
+
+Copy
+
+
+src\scripts\menu.ts
+3. Asegúrate de que Header.astro sea simple y funcional:
+---
+import Navigation from "./Navigation.astro";
+import Hamburger from "./HamburgerMenu.astro";
+---
+
+<header>
+  <nav>
+    <Hamburger />
+    <Navigation />
+  </nav>
+</header>
+
+<style>
+  header {
+    padding: 1rem;
+    background-color: white;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
+
+Copy
+
+
+src\componentes\Header.astro
+4. Modifica ContenedorEstilos.tsx para que solo afecte al contenido principal:
+import useStore from "../store/useStore";
+
+export default function ContenedorEstilos({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { diseñoInStore } = useStore();
+  return <div className={diseñoInStore}>{children}</div>;
+}
+
+Copy
+
+
+src\layouts\ContenedorEstilos.tsx
+Explicación:
+El problema principal es que React (a través de client:only="react") está tomando el control del DOM dentro de ContenedorEstilos, lo que interfiere con los selectores de JavaScript vanilla que intentan acceder a elementos dentro de ese componente.
+
+Al mover el Header fuera del ContenedorEstilos, permitimos que el script de menú pueda acceder directamente a los elementos del DOM sin la interferencia de React.
+
+Esta solución mantiene la funcionalidad de cambio de estilos para el contenido principal a través de ContenedorEstilos, mientras permite que el menú hamburguesa funcione correctamente con JavaScript vanilla.
