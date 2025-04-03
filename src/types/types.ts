@@ -14,3 +14,8 @@ export interface StoreState {
   diseñoInStore: Diseño;
   cambiarDiseño: (estilo: Diseño) => void;
 }
+
+export interface DescripciónEstilo {
+  nombre: Diseño;
+  descripción: string;
+}

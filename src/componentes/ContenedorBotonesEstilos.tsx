@@ -1,11 +1,14 @@
 // store
 import useStore from "../store/useStore";
 
-//
+// estilos
+import styles from "../styles/ContenedorBotonesEstilos.module.css";
+
+// tipos
 import { Diseño } from "../types/types";
 
 export default function ContenedorBotonesEstilos() {
-  const { cambiarDiseño } = useStore();
+  const { cambiarDiseño, diseñoInStore } = useStore();
 
   // handle cambio de estilos
   function handleDiseño(estilo: Diseño) {
@@ -20,16 +23,41 @@ export default function ContenedorBotonesEstilos() {
   }
 
   return (
-    <section className="contenedorEstilos">
-      <button onClick={() => handleDiseño(Diseño.dark)}>Dark</button>
-      <button onClick={() => handleDiseño(Diseño.light)}>Light</button>
-      <button onClick={() => handleDiseño(Diseño.neumorphism)}>
+    <section className={styles.contenedorEstilos}>
+      <button
+        className={styles[`${diseñoInStore}`]}
+        onClick={() => handleDiseño(Diseño.neumorphism)}
+      >
         Neumorphism
       </button>
-      <button onClick={() => handleDiseño(Diseño.neubrutalism)}>
+
+      <button
+        className={styles[`${diseñoInStore}`]}
+        onClick={() => handleDiseño(Diseño.dark)}
+      >
+        Dark
+      </button>
+
+      <button
+        className={styles[`${diseñoInStore}`]}
+        onClick={() => handleDiseño(Diseño.gamer)}
+      >
+        Gamer
+      </button>
+
+      <button
+        className={styles[`${diseñoInStore}`]}
+        onClick={() => handleDiseño(Diseño.light)}
+      >
+        Light
+      </button>
+
+      <button
+        className={styles[`${diseñoInStore}`]}
+        onClick={() => handleDiseño(Diseño.neubrutalism)}
+      >
         Neubrutalism
       </button>
-      <button onClick={() => handleDiseño(Diseño.gamer)}>Gamer</button>
     </section>
   );
 }

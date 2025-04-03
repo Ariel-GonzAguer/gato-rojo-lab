@@ -1,0 +1,71 @@
+.contenedorEstilos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto;
+
+    & button {
+        all: unset;
+    }
+
+    & .dark {
+        color: whitesmoke;
+        border: 3px solid whitesmoke;
+        background-color: black;
+        padding: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-image: url("/assets/backgrounds/Matrix_SVG.svg");
+            background-size: contain;
+            color: whitesmoke;
+        }
+    }
+
+    .light {
+        color: red;
+        background-color: white;
+        border: 3px solid #b51f26;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-image: url("/assets/backgrounds/dust_SVG.svg");
+            background-size: cover;
+            color: black;
+        }
+    }
+
+    .neumorphism {
+        color: blue;
+    }
+
+    .neubrutalism {
+        background-color: #FF6B00;
+        color: white;
+        border: 5px solid black;
+        padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: bolder;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #00A3FF;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+    }
+
+    .gamer {
+        color: orange;
+    }
+}

@@ -4,18 +4,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // componentes
 import ContenedorBotonesEstilos from "../componentes/ContenedorBotonesEstilos";
+import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
 ---
 
 <style>
   .index {
     height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      /* margin: 1rem auto 0; */
+      font-size: 5rem;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .index {
+      height: 100%;
+    }
   }
 </style>
 
 <BaseLayout pageTitle="Home">
   <section class="index">
-    <h1>Astro</h1>
+    <h1>
+      G<span>a</span>t<span>o</span>
+      R<span>o</span>j<span>o</span>
+      L<span>a</span>b
+    </h1>
     <h2>Elige un estilo</h2>
     <ContenedorBotonesEstilos client:only="react" />
+    <DescripciónEstilosP client:only="react" />
   </section>
 </BaseLayout>
