@@ -1,11 +1,11 @@
 ---
 import Navigation from "./Navigation.astro";
-import Hamburger from "./HamburgerMenu.astro";
+import HamburgerMenu from "./HamburgerMenu";
 ---
 
 <header>
   <nav>
-    <Hamburger />
+    <HamburgerMenu client:only="react" />
     <Navigation />
   </nav>
 </header>

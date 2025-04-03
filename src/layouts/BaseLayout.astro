@@ -11,6 +11,7 @@ import { ClientRouter } from "astro:transitions";
 // componentes
 import StructuredData from "../componentes/StructuredData.astro";
 import Header from "../componentes/Header.astro";
+// import HamburgerMenu from "../componentes/HamburgerMenu";
 
 // contenedor estilos
 import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
@@ -71,10 +72,6 @@ const { pageTitle }: Props = Astro.props;
       <main>
         <slot />
         <Analytics />
-
-        <script>
-          import "../scripts/menu.ts";
-        </script>
       </main>
     </body>
   </ContenedorEstilos>
