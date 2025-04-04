@@ -11,10 +11,10 @@ html {
 }
 
 body {
+  height: 100vh;
   scroll-behavior: smooth;
   line-height: 1.5;
   text-align: center;
-  height: 100vh;
 }
 
 /* h1,
@@ -161,6 +161,7 @@ h2 {
 .nav-links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 80%;
@@ -193,7 +194,7 @@ h2 {
     & .line {
       width: 45px;
       height: 7px;
-      background-color: #000;
+      background-color: red;
       margin: 5px 0;
     }
 
@@ -204,17 +205,14 @@ h2 {
       align-items: center;
       justify-content: center;
       margin: 0 auto;
-      padding: 0.5rem 3rem;
-
-   
-
+      width: 250px;
 
       & a {
         all: unset !important;
         text-decoration: none;
         border-bottom: none;
         font-size: 1.5rem !important;
-        
+        font-weight: bolder !important;
       }
     }
 
