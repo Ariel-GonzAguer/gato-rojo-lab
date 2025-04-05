@@ -5,7 +5,7 @@ const descripciónEstilos: DescripciónEstilo[] = [
   {
     nombre: Diseño.dark,
     descripción:
-      "Un diseño elegante y moderno con colores oscuros que reducen la fatiga visual y resaltan los elementos clave mediante contrastes sutiles y efectos luminosos.",
+      "Elegante y moderno con colores oscuros que reducen la fatiga visual y resaltan los elementos clave mediante contrastes sutiles y efectos luminosos.",
   },
   {
     nombre: Diseño.light,
@@ -15,17 +15,17 @@ const descripciónEstilos: DescripciónEstilo[] = [
   {
     nombre: Diseño.neumorphism,
     descripción:
-      "Un estilo suave y realista que combina luces y sombras para crear elementos con apariencia tridimensional, logrando una estética moderna y táctil.",
+      "Suave y realista, combina luces y sombras para crear elementos con apariencia tridimensional, logrando una estética moderna y suave.",
   },
   {
     nombre: Diseño.neubrutalism,
     descripción:
-      "Un diseño audaz y llamativo con colores vibrantes, tipografía gruesa y bordes marcados, inspirado en el brutalismo pero con un toque contemporáneo y accesible.",
+      "Audaz y llamativo con colores vibrantes, tipografía gruesa y bordes marcados, inspirado en el brutalismo pero con un toque contemporáneo y accesible.",
   },
   {
     nombre: Diseño.gamer,
     descripción:
-      "Un estilo dinámico y futurista con colores neón, efectos de iluminación y tipografía angular, evocando la estética de los videojuegos y la cultura digital.",
+      "Dinámico y retro, con colores neón, efectos de iluminación y tipografía angular, evocando la estética de los videojuegos y la cultura digital.",
   },
 ];
 

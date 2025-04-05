@@ -6,6 +6,11 @@ export default function ContenedorEstilos({
   children: React.ReactNode;
 }) {
   const { diseñoInStore } = useStore();
-  return <div className={diseñoInStore}>{children}
+  return <div className={diseñoInStore} style={{
+    minHeight: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    overflow: 'auto'
+  }}>{children}
   </div>;
 }

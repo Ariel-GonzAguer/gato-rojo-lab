@@ -9,12 +9,12 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
 
 <style>
   .index {
-    height: 100vh;
-    /* overflow: hidden; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
 
     & h1 {
       /* margin: 1rem auto 0; */
@@ -24,7 +24,12 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
 
   @media only screen and (max-width: 500px) {
     .index {
-      height: 100%;
+      justify-content: flex-start; /* En móviles, alinear desde arriba */
+      padding-top: 2rem; /* Dar espacio en la parte superior */
+
+      & h1 {
+        font-size: 3rem; /* Reducir tamaño de fuente en móviles */
+      }
     }
   }
 </style>
