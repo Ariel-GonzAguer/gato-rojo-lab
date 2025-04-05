@@ -17,21 +17,13 @@ body {
   text-align: center;
 }
 
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 1rem auto;
-} */
-
 h1 {
   font-size: 3rem;
 }
 
 h2 {
   font-size: 1.3rem;
+  margin: 0 auto;
 }
 
 /* tipografías */
@@ -117,7 +109,45 @@ h2 {
 }
 
 .neumorphism {
-  color: blue;
+  color: #606a80;
+  /* background-color: #e4eefc; */
+  background-image: url("/assets/imgs/neumor.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+
+  &:hover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 5px;
+  }
+
+  & h2 {
+    width: 300px;
+    max-width: 500px;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  }
+
+  & a {
+    box-shadow: -5px 5px 10px #bebebe, 5px -5px 10px #ffffff;
+    background-color: pink;
+    padding: 0.6rem;
+    border-radius: 5px;
+    color: black;
+
+    &:hover {
+      background-color:  #D3B3FF ;
+      /* color: #606a80; */
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+  }
 }
 
 .neubrutalism {
@@ -154,6 +184,13 @@ h2 {
 }
 .gamer {
   color: orange;
+
+  & :hover {
+    color: red;
+    background-color: orange;
+    border-radius: 5px;
+    transform: scale(1.1);
+  }
 }
 
 /* Menu´s */

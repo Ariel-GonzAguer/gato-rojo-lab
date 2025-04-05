@@ -20,7 +20,8 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &.selected {
       background-image: url("/assets/backgrounds/Matrix_SVG.svg");
       background-size: contain;
       color: whitesmoke;
@@ -37,7 +38,8 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &.selected {
       background-image: url("/assets/backgrounds/dust_SVG.svg");
       background-size: cover;
       color: black;
@@ -46,6 +48,19 @@
 
   .neumorphism {
     color: blue;
+    box-shadow: -5px 5px 10px #bebebe, 5px -5px 10px #ffffff;
+    color: black;
+    padding: 0.6rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    background-color: #bcd8ff;
+
+    &:hover,
+    &.selected {
+      background-color: #ffffff;
+      box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+    }
   }
 
   .neubrutalism {
@@ -58,7 +73,8 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &.selected {
       background-color: #00a3ff;
       border-radius: 5px;
       transform: scale(1.1);
