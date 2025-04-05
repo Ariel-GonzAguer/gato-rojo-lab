@@ -1,9 +1,65 @@
 ---
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// componentes
+import ProyectoCard from "../componentes/ProyectoCard.astro";
+
+// agregar para content collection
+import { getCollection } from "astro:content";
+
+const allProyectos = await getCollection("proyectos"); // agregar para content collection
+console.log(allProyectos);
 ---
 
+<style>
+  .proyectos {
+    padding-bottom: 2rem;
+
+    & h1 {
+      margin-bottom: 2rem;
+    }
+
+    & p {
+      margin: 0 auto 2rem;
+      width: 75%;
+      max-width: 1000px;
+    }
+
+    & ul {
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+  }
+</style>
+
 <BaseLayout pageTitle="Proyectos">
-  <h1>Proyectos</h1>
-  <h2>Minimalista</h2>
+  <section class="proyectos">
+    <h1>Proyectos</h1>
+    <p>
+      Estos son algunos de los proyectos que hemos realizado. Si ve alguno que
+      le guste, no dude en mencionarlo cuando nos reunamos.
+    </p>
+
+    <ul>
+      {
+        allProyectos.map((proyecto: any) => (
+          <ProyectoCard
+            key={proyecto.name}
+            name={proyecto.data.name}
+            tags={proyecto.data.tags}
+            description={proyecto.data.description}
+            emoji={proyecto.data.emoji}
+            link={proyecto.data.link}
+          />
+        ))
+      }
+    </ul>
+  </section>
 </BaseLayout>

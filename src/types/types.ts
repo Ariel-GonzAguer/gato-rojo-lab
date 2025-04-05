@@ -19,3 +19,11 @@ export interface DescripciónEstilo {
   nombre: Diseño;
   descripción: string;
 }
+
+export interface PropsCard {
+  name: string;
+  tags: string[];
+  description: string;
+  emoji: string;
+  link: string;
+}
