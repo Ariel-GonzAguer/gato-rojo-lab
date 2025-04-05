@@ -31,31 +31,31 @@ h2 {
 @font-face {
   font-family: "Roboto_Mono";
   src: local("Roboto_Mono"),
-    url(assets/fonts/Roboto_Mono/Roboto_Mono.woff2) format("woff2");
+    url(/assets/fonts/Roboto_Mono/Roboto_Mono.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "Open_Sans";
   src: local("OpenSans-Regular"),
-    url(assets/fonts/Open_Sans/OpenSans-Regular.woff2) format("woff2");
+    url(/assets/fonts/Open_Sans/OpenSans-Regular.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "Kanit_Regular";
   src: local("Kanit_Regular"),
-    url(assets/fonts/Kanit/Kanit_Regular.woff2) format("woff2");
+    url(/assets/fonts/Kanit/Kanit_Regular.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "Lexend_Mega";
-  src: local("Lexend_Mega_Regular"),
-    url(assets/fonts/Lexend_Mega/Lexend_Mega_Regular.woff2) format("woff2");
+  src: local("Lexend_Mega"),
+    url(/assets/fonts/Lexend_Mega/Lexend_Mega.woff2) format("woff2");
 }
 
 @font-face {
   font-family: "PressStart2P";
   src: local("PressStart2P_Regular"),
-    url(assets/fonts/PressStart2P/PressStart2P_Regular.ttf) format("truetype");
+    url(/assets/fonts/PressStart2P/PressStart2P_Regular.ttf) format("truetype");
 }
 
 /* contenedor estilos */
@@ -114,7 +114,7 @@ h2 {
 .neumorphism {
   font-family: "Open_Sans", Arial, Helvetica, sans-serif;
   color: #606a80;
-  background-image: url("/assets/backgrounds/neumor.svg");
+  background-image: url("/assets/backgrounds/neumor.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
