@@ -3,7 +3,44 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
+<style>
+  .acerca-de {
+    padding: 1rem;
+    text-align: center;
+
+    & p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin: 1rem auto 0;
+      width: 75%;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+      color: black !important
+    }
+  }
+</style>
+
 <BaseLayout pageTitle="Acerca de">
-  <h1>Acerca de</h1>
-  <h2>Minimalista</h2>
+  <section class="acerca-de">
+    <h1>Acerca de</h1>
+
+    <p>
+      Gato Rojo Lab se enfoca en soluciones web funcionales, minimalistas y
+      accesibles, dónde lo más importante es la Expencia de la Persona Usuaria.
+    </p>
+    <p>
+      Ya sea que necesite una Landing Page, una Tienda en Línea para vender sus
+      productos, el blog de cocina o viajes que siempre ha querido tener, o
+      algún proyecto más complejo, Gato Rojo Lab puede hacerlo realidad gracias
+      a la expriencia y conocimiento en tecnologías modernas, además de la
+      atención al detalle y nivel de especifidad de requerimientos.
+    </p>
+    <p>
+      Nos gusta trabajar con personas individuales y PYMES que ven en la
+      creatividad y la accesibilidad una forma ideal de atraer y mantener a sus
+      clientes.
+    </p>
+    <p>Estas son algunas de las tecnologías que más usamos para que las aplicaciones o sitios web tengan una carga rápida: Astro, React, Zustand, Wouter, CSS puro.</p>
+    <p>Visite la sección de Proyectos para ver parte de lo que podemos lograr.</p>
+  </section>
 </BaseLayout>

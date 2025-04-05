@@ -10,6 +10,9 @@ import { Diseño } from "../types/types";
 // hooks
 import { useEffect, useRef } from "react";
 
+// componentes
+import { toast, Toaster } from "sonner";
+
 export default function ContenedorBotonesEstilos() {
   const { cambiarDiseño, diseñoInStore } = useStore();
   const botonesRef = useRef<HTMLButtonElement[]>([]);
@@ -36,8 +39,13 @@ export default function ContenedorBotonesEstilos() {
 
     const body = document.body;
     body.classList.add("blur");
-
+    
     cambiarDiseño(estilo);
+
+    toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`, {
+      duration: 7000,
+      className: estilo
+    })
 
     setTimeout(() => {
       body.classList.remove("blur");
@@ -53,6 +61,7 @@ export default function ContenedorBotonesEstilos() {
 
   return (
     <section className={styles.contenedorEstilos}>
+      <Toaster position="bottom-center" closeButton visibleToasts={1} richColors />
       <button
         ref={(el) => addButtonRef(el, 0)}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neumorphism ? styles.selected : ''}`}

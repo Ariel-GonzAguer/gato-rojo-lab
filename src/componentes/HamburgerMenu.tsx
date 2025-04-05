@@ -23,8 +23,8 @@ export default function HamburgerMenu() {
           isOpen && (
             <div className={isOpen ? 'menu-open' : 'menu-closed'}>
               <a href="/" onClick={() => setIsOpen(false)}>Inicio</a>
-              <a href="/proyectos" onClick={() => setIsOpen(false)}>Proyectos</a>
               <a href="/servicios" onClick={() => setIsOpen(false)}>Servicios</a>
+              <a href="/proyectos" onClick={() => setIsOpen(false)}>Proyectos</a>
               <a href="/acerca-de" onClick={() => setIsOpen(false)}>Acerca-de</a>
               <a href="/contacto" onClick={() => setIsOpen(false)}>Contacto</a>
             </div>

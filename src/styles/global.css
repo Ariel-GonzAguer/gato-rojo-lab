@@ -63,6 +63,7 @@ h2 {
 .blur {
   filter: brightness(0.2) blur(5px);
   transition: filter 0.9s ease;
+  z-index: 1;
 }
 
 .dark {
