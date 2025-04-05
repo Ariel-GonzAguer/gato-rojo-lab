@@ -39,12 +39,13 @@ export default function ContenedorBotonesEstilos() {
 
     const body = document.body;
     body.classList.add("blur");
-    
+
     cambiarDiseño(estilo);
 
     toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`, {
-      duration: 7000,
-      className: estilo
+      duration: 5500,
+      className: estilo,
+      style: { fontSize: "1.2rem", height: "auto" }
     })
 
     setTimeout(() => {

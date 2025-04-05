@@ -11,7 +11,7 @@ export default function DescripciónEstilosP() {
   const { diseñoInStore } = useStore();
 
   return (
-    <p
+    <section
       className={styles[`${diseñoInStore}`]}
       style={{
         margin: diseñoInStore === "neubrutalism" || "gamer" ? "1rem auto" : "4rem auto 2rem",
@@ -26,11 +26,11 @@ export default function DescripciónEstilosP() {
       {
         diseñoInStore === "gamer" && (
           <>
-            <div className="vibrate1" style={{lineHeight: "0.5"}}>
+            <p className="vibrate1" style={{lineHeight: "0.5"}}>
               <span style={{ fontSize: "2rem" }}>👾</span>
               <span style={{ fontSize: "3rem" }}>👾</span>
               <span style={{ fontSize: "2rem" }}>👾</span>
-            </div>
+            </p>
             < br />
           </>
         )
@@ -47,6 +47,6 @@ export default function DescripciónEstilosP() {
           </>
         )
       }
-    </p>
+    </section>
   );
 }

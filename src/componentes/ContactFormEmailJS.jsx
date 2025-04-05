@@ -1,12 +1,19 @@
-import React, { useRef } from "react";
+// hooks
+import { useRef } from "react";
 
+// componentes/librerías
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "sonner";
 
+// estilos
 import styles from "../styles/Contact.module.css";
+
+// store
+import useStore from "../store/useStore";
 
 export default function ContactFormEmailJS() {
   const form = useRef();
+  const { diseñoInStore } = useStore();
 
   async function sendEmail(e) {
     e.preventDefault();
@@ -33,48 +40,47 @@ export default function ContactFormEmailJS() {
   }
 
   return (
-    <>
+    <form ref={form} onSubmit={sendEmail} className={styles.form}>
       <Toaster richColors position="bottom-center" closeButton />
-      <form ref={form} onSubmit={sendEmail} className={styles.form}>
-        <h3>¡Envíe un mensaje!</h3>
 
-        <label htmlFor="user_name">Nombre</label>
-        <input
-          type="text"
-          name="user_name"
-          id="user_name"
-          aria-required="true"
-          aria-label="Nombre completo"
-          required
-        />
+      <label htmlFor="user_name">Nombre</label>
+      <input
+        type="text"
+        name="user_name"
+        id="user_name"
+        aria-required="true"
+        aria-label="Nombre completo"
+        required
+      />
 
-        <label htmlFor="user_email">Email</label>
-        <input
-          type="email"
-          name="user_email"
-          id="user_email"
-          aria-required="true"
-          aria-label="Su dirección de correo electrónico"
-          required
-        />
+      <label htmlFor="user_email">Email</label>
+      <input
+        type="email"
+        name="user_email"
+        id="user_email"
+        aria-required="true"
+        aria-label="Su dirección de correo electrónico"
+        required
+      />
 
-        <label htmlFor="message">Mensaje</label>
-        <textarea
-          name="message"
-          rows="10"
-          cols="32"
-          id="message"
-          aria-required="true"
-          aria-label="Su mensaje"
-          required
-        />
+      <label htmlFor="message">Mensaje</label>
+      <textarea
+        name="message"
+        rows="10"
+        cols="32"
+        id="message"
+        aria-required="true"
+        aria-label="Su mensaje"
+        required
+      />
 
-        <input
-          type="submit"
-          value="ENVIAR MENSAJE"
-          aria-label="Enviar su mensaje"
-        />
-      </form>
-    </>
+      <input
+        type="submit"
+        value="ENVIAR MENSAJE"
+        aria-label="Enviar su mensaje"
+        className={styles[diseñoInStore]}
+        style={{ cursor: "pointer" }}
+      />
+    </form>
   );
 }

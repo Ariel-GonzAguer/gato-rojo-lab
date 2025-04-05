@@ -14,7 +14,7 @@ const useStore = create<StoreState>()(
       cambiarDiseño: (estilo: Diseño) =>
         set((state) => {
           state.diseñoInStore = estilo;
-          console.log("cambiarDiseño", estilo);
+          // console.log("cambiarDiseño", estilo);
         }),
     })),
     {

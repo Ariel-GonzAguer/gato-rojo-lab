@@ -36,6 +36,7 @@
     font-size: 1.2rem;
     font-weight: bolder;
     cursor: pointer;
+    
     &:hover,
     &.selected {
       background-image: url("/assets/backgrounds/dust_SVG.svg");
@@ -92,3 +93,4 @@
     }
   }
 }
+
