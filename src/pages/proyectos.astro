@@ -9,7 +9,8 @@ import ProyectoCard from "../componentes/ProyectoCard.astro";
 import { getCollection } from "astro:content";
 
 const allProyectos = await getCollection("proyectos"); // agregar para content collection
-console.log(allProyectos);
+
+const pageTitle = "Proyectos · Gato Rojo Lab";
 ---
 
 <style>
@@ -39,7 +40,7 @@ console.log(allProyectos);
   }
 </style>
 
-<BaseLayout pageTitle="Proyectos">
+<BaseLayout pageTitle={pageTitle}>
   <section class="proyectos">
     <h1>Proyectos</h1>
     <p>

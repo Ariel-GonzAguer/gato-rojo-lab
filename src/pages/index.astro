@@ -2,6 +2,8 @@
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const pageTitle = 'Gato Rojo Lab · Desarrollo web minimalista y práctico'
+
 // componentes
 import ContenedorBotonesEstilos from "../componentes/ContenedorBotonesEstilos";
 import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
@@ -34,7 +36,7 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
   }
 </style>
 
-<BaseLayout pageTitle="Home">
+<BaseLayout pageTitle={pageTitle}>
   <section class="index">
     <h1>
       G<span>a</span>t<span>o</span>

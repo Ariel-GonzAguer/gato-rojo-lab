@@ -1,6 +1,8 @@
 ---
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = 'Acerca de · Gato Rojo Lab'
 ---
 
 <style>
@@ -19,7 +21,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 </style>
 
-<BaseLayout pageTitle="Acerca de">
+<BaseLayout pageTitle={pageTitle}>
   <section class="acerca-de">
     <h1>Acerca de</h1>
 

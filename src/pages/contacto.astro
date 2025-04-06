@@ -2,6 +2,8 @@
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const pageTitle = "Contacto · Gato Rojo Lab";
+
 // componentes
 import ContactFormEmailJS from "../componentes/ContactFormEmailJS";
 
@@ -26,7 +28,7 @@ import "../styles/Contact.module.css";
 
 </style>
 
-<BaseLayout pageTitle="Contacto">
+<BaseLayout pageTitle={pageTitle}>
   <section class="contacto">
     <h1>Contacto</h1>
     <p>
