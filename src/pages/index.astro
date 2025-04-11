@@ -2,7 +2,7 @@
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = 'Gato Rojo Lab · Desarrollo web minimalista y práctico'
+const pageTitle = "Gato Rojo Lab · Desarrollo web minimalista y práctico";
 
 // componentes
 import ContenedorBotonesEstilos from "../componentes/ContenedorBotonesEstilos";
@@ -21,6 +21,12 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
     & h1 {
       /* margin: 1rem auto 0; */
       font-size: 5rem;
+    }
+
+    & p {
+      font-size: 1.5rem;
+      margin: 1rem auto;
+      max-width: 800px;
     }
   }
 
@@ -43,6 +49,10 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
       R<span>o</span>j<span>o</span>
       L<span>a</span>b
     </h1>
+    <p>
+      Soluciones web funcionales, minimalistas y
+      accesibles, dónde lo más importante es la Expencia de la Persona Usuaria.
+    </p>
     <h2>Elige un estilo</h2>
     <ContenedorBotonesEstilos client:only="react" />
     <DescripciónEstilosP client:only="react" />
