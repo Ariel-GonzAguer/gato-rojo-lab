@@ -42,11 +42,7 @@ export default function ContenedorBotonesEstilos() {
 
     cambiarDiseño(estilo);
 
-    toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`, {
-      duration: 5500,
-      className: estilo,
-      style: { fontSize: "1.2rem", height: "auto" }
-    })
+    alert(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`)
 
     setTimeout(() => {
       body.classList.remove("blur");
