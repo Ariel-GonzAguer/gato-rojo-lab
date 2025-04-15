@@ -3,7 +3,8 @@ import { useRef } from "react";
 
 // componentes/librerías
 import emailjs from "@emailjs/browser";
-import { toast, Toaster } from "sonner";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 // estilos
 import styles from "../styles/Contact.module.css";
