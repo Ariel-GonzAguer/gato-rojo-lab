@@ -45,7 +45,7 @@ export default function ContenedorBotonesEstilos() {
     toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`,
       {
         className: `${styles[`${estilo}`]}`,
-        duration: 4500,
+        duration: 5500,
       }
     )
 

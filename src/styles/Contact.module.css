@@ -12,10 +12,16 @@
     padding: 0.8rem 0 0.2rem;
   }
 
+  & input {
+    width: 50%;
+    min-width: 300px;
+  }
+
   & input[type="submit"] {
     margin-top: 0.6rem;
-    padding: 0.3rem;
-    min-width: 200px;
+    padding: 0.6rem;
+    width: 250px;
+
   }
 
   & .dark {

@@ -99,6 +99,11 @@ h2 {
   background-attachment: fixed;
   min-height: 100%;
 
+  & .strong {
+    color: black;
+    font-weight: bolder;
+  }
+
   & a {
     color: red;
     border-bottom: 3px solid #b51f26;
@@ -120,6 +125,10 @@ h2 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
+
+  & strong {
+    color: black;
+  }
 
   &:hover {
     background-size: cover;
@@ -160,6 +169,10 @@ h2 {
   background-color: #ffd700;
   min-height: 100%;
   font-weight: bolder;
+
+  & .strong {
+    color: #00a3ff;
+  }
 
   & a {
     color: #0000ff;
@@ -202,6 +215,11 @@ h2 {
   background-image: url("/assets/backgrounds/Interstellar_SVG.svg");
   min-height: 100%;
 
+  & .strong,
+  .linkContactoP {
+    color: white;
+  }
+
   & h1 {
     margin: 2rem auto;
     font-size: 4rem !important;
@@ -223,6 +241,11 @@ h2 {
       border-radius: 5px;
     }
   }
+}
+
+.linkContacto {
+  border: none !important;
+  padding: 0.05rem !important;
 }
 
 /* Menu´s */

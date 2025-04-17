@@ -1,11 +1,123 @@
 ---
-// layout
 import BaseLayout from "../layouts/BaseLayout.astro";
+import useStore from "../store/useStore";
 
-const pageTitle = 'Servicio · Gato Rojo Lab'
+const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
 ---
 
+<style>
+  .servicios {
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    & h1 {
+      font-size: 2.5rem;
+      margin: 0 auto 1rem;
+    }
+
+    & p {
+      font-size: 1.6rem;
+      margin: 1rem auto;
+      width: 100%;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+      line-height: 2rem;
+    }
+
+    & ul {
+      margin: 1rem auto 5rem;
+
+      & li {
+        list-style: none;
+        margin: 2rem auto;
+      }
+    }
+  }
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Servicios</h1>
-  <h2>Minimalista</h2>
+  <section class="servicios">
+    <h1>Servicios que ofrecemos</h1>
+    <ul>
+      <li>
+        <p>
+          <strong class="strong">Desarrollo Web Personalizado:</strong><br /> Creación
+          de sitios web funcionales, minimalistas y accesibles, incluyendo landing
+          pages, blogs, tiendas en línea y portafolios.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong"
+            >Optimización para Motores de Búsqueda (SEO):</strong
+          ><br /> Implementación de metaetiquetas, datos estructurados, sitemaps
+          y optimización de velocidad de carga.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Diseño Web Minimalista:</strong><br /> Creación
+          de interfaces limpias y atractivas, adaptadas a las necesidades del cliente.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Desarrollo Frontend:</strong><br /> Implementación
+          de componentes reutilizables con React y tecnologías modernas como Zustand.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Integración de APIs:</strong><br /> Configuración
+          de servicios como EmailJS para formularios de contacto y creación de APIs
+          personalizadas.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Optimización de Imágenes y Recursos:</strong
+          ><br /> Uso de técnicas como lazy loading y compresión de imágenes para
+          mejorar el rendimiento.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Desarrollo JAMStack:</strong><br /> Creación de
+          sitios web rápidos y seguros con tecnologías JAMStack y despliegue en plataformas
+          como Vercel.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Consultoría y Auditoría Web:</strong><br /> Revisión
+          de sitios existentes para mejorar rendimiento, accesibilidad y SEO.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong"
+            >Mantenimiento y Actualización de Sitios Web:</strong
+          ><br /> Actualización de contenido, estilos y funcionalidades, además de
+          resolución de errores.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong class="strong">Capacitación y Soporte Técnico:</strong><br /> Capacitación
+          en herramientas como Astro, React y CSS, además de soporte técnico continuo.
+        </p>
+      </li>
+    </ul>
+
+    <p
+      style="text-align: center; font-weight: bolder; font-size: 2rem; line-height: 2.5rem;" class="linkContactoP"
+    >
+      Para conocer el precio base de cada servicio no dude en <a
+        href="/contacto"
+        class="linkContacto">contactarnos</a
+      >.
+    </p>
+  </section>
 </BaseLayout>
