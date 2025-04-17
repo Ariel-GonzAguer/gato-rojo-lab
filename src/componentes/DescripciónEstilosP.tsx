@@ -7,8 +7,33 @@ import useStore from "../store/useStore";
 // estilos
 import styles from "../styles/ContenedorBotonesEstilos.module.css";
 
+// hooks
+import { useState } from "react";
+
 export default function DescripciónEstilosP() {
   const { diseñoInStore } = useStore();
+  const [aliens, setAliens] = useState(["👾", "👾", "👾"]);
+
+  // handlers
+  const handleJoystickClick = () => {
+    if (diseñoInStore === "gamer" && aliens.length > 0) {
+      setAliens((prevAliens) => {
+        const updatedAliens = [...prevAliens];
+        const indexToChange = updatedAliens.findIndex((alien) => alien === "👾");
+        if (indexToChange !== -1) {
+          updatedAliens[indexToChange] = "💥";
+        }
+        return updatedAliens;
+      });
+    }
+  };
+
+  function handleRestart() {
+    if (diseñoInStore === "gamer") {
+      setAliens(["👾", "👾", "👾"]);
+    }
+  }
+
 
   return (
     <section
@@ -26,11 +51,20 @@ export default function DescripciónEstilosP() {
       {
         diseñoInStore === "gamer" && (
           <>
-            <p className="vibrate1" style={{lineHeight: "0.5"}}>
-              <span style={{ fontSize: "2rem" }}>👾</span>
-              <span style={{ fontSize: "3rem" }}>👾</span>
-              <span style={{ fontSize: "2rem" }}>👾</span>
-            </p>
+            {
+              aliens.some(alien => alien === "👾") && (
+                aliens.map((alien, index) => (
+                  <span key={index} style={{ fontSize: "2.5rem" }}>
+                    {alien}
+                  </span>
+                ))
+              )
+            }
+            {
+              aliens.every(alien => alien === "💥") && (
+                <span style={{ fontSize: "2rem", color: "white" }} className="youWin">You win!</span>
+              )
+            }
             < br />
           </>
         )
@@ -43,7 +77,12 @@ export default function DescripciónEstilosP() {
       {
         diseñoInStore === "gamer" && (
           <>
-            <span style={{ fontSize: "2.5rem" }}>🕹️</span> < br />
+            <span style={{ fontSize: "2.5rem" }} onClick={handleJoystickClick}>🕹️</span> < br />
+            {
+              aliens.every(alien => alien === "💥") ? (
+                <p style={{ fontSize: "2rem", color: "white" }} onClick={handleRestart}>Restart</p>
+              ) : <p style={{ fontSize: "1.6rem", color: "white" }}>Click to play!</p>
+            }
           </>
         )
       }
