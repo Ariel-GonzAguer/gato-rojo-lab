@@ -156,7 +156,6 @@ h2 {
 
     &:hover {
       background-color: #d3b3ff;
-      /* color: #606a80; */
       border-radius: 5px;
       transform: scale(1.1);
     }
@@ -226,7 +225,8 @@ h2 {
     color: red;
   }
 
-  & h2, .youWin {
+  & h2,
+  .youWin {
     animation: blink1 3s infinite alternate-reverse both;
   }
 

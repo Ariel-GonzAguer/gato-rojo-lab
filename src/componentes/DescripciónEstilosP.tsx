@@ -52,18 +52,13 @@ export default function DescripciónEstilosP() {
         diseñoInStore === "gamer" && (
           <>
             {
-              aliens.some(alien => alien === "👾") && (
+              aliens.some(alien => alien === "👾") ? (
                 aliens.map((alien, index) => (
                   <span key={index} style={{ fontSize: "2.5rem" }}>
                     {alien}
                   </span>
                 ))
-              )
-            }
-            {
-              aliens.every(alien => alien === "💥") && (
-                <span style={{ fontSize: "2rem", color: "white" }} className="youWin">You win!</span>
-              )
+              ) : <span style={{ fontSize: "2rem", color: "white" }} className="youWin">You win!</span>
             }
             < br />
           </>
@@ -77,11 +72,11 @@ export default function DescripciónEstilosP() {
       {
         diseñoInStore === "gamer" && (
           <>
-            <span style={{ fontSize: "2.5rem" }} onClick={handleJoystickClick}>🕹️</span> < br />
+            <button style={{fontSize: "2.5rem", background:"transparent", border:"none", cursor:"pointer" }} onClick={handleJoystickClick}>🕹️</button> < br />
             {
               aliens.every(alien => alien === "💥") ? (
-                <p style={{ fontSize: "2rem", color: "white" }} onClick={handleRestart}>Restart</p>
-              ) : <p style={{ fontSize: "1.6rem", color: "white" }}>Click to play!</p>
+                <p style={{ fontSize: "2rem", color: "white", cursor: "pointer" }} onClick={handleRestart}>Restart</p>
+              ) : <p style={{ fontSize: "1.6rem", color: "white" }}>Click the joystick to play!</p>
             }
           </>
         )
