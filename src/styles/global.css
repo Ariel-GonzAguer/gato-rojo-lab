@@ -271,6 +271,7 @@ h2 {
   display: none;
 }
 
+/* menu modo hamburguesa */
 @media screen and (max-width: 500px) {
   .nav-links {
     display: none;
