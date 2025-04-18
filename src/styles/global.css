@@ -75,6 +75,10 @@ h2 {
   color: whitesmoke;
   min-height: 100%;
 
+  & .proyectoH3 {
+    color: red;
+  }
+
   & a {
     color: whitesmoke;
     border: 3px solid whitesmoke;
@@ -99,7 +103,8 @@ h2 {
   background-attachment: fixed;
   min-height: 100%;
 
-  & .strong {
+  & .strong,
+  .proyectoH3 {
     color: black;
     font-weight: bolder;
   }
@@ -126,7 +131,8 @@ h2 {
   background-attachment: fixed;
   min-height: 100%;
 
-  & strong {
+  & strong,
+  .proyectoH3 {
     color: black;
   }
 
@@ -169,8 +175,9 @@ h2 {
   min-height: 100%;
   font-weight: bolder;
 
-  & .strong {
-    color: #00a3ff;
+  & .strong,
+  .proyectoH3 {
+    color: #0175b8;
   }
 
   & a {
@@ -215,7 +222,8 @@ h2 {
   min-height: 100%;
 
   & .strong,
-  .linkContactoP {
+  .linkContactoP,
+  .proyectoH3 {
     color: white;
   }
 

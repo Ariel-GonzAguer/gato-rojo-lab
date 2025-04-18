@@ -2,7 +2,6 @@
 import type { PropsCard } from "../types/types";
 
 const { name, tags, description, emoji, link } = Astro.props as PropsCard;
-console.log({ name, tags, description, emoji, link });
 ---
 
 <style>
@@ -36,7 +35,7 @@ console.log({ name, tags, description, emoji, link });
 </style>
 
 <li>
-  <h3>{name}</h3>
+  <h3 class="proyectoH3">{name}</h3>
   <p class="descripcion">{description}</p>
   <p class="emoji">{emoji}</p>
   <p class="tags">{tags.join(", ")}</p>
