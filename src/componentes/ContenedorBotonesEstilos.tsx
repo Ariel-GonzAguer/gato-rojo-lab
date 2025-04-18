@@ -42,7 +42,7 @@ export default function ContenedorBotonesEstilos() {
 
     cambiarDiseño(estilo);
 
-    toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño; para cambiarlo, solo regrese al Inicio y seleccione otro.`,
+    toast(`Ha elegido el diseño ${estilo}. Todas las páginas tendrán este diseño. Para cambiarlo, solo regrese al Inicio y seleccione otro.`,
       {
         className: `${styles[`${estilo}`]}`,
         duration: 5500,
