@@ -15,14 +15,10 @@ const pageTitle = "Proyectos · Gato Rojo Lab";
 
 <style>
   .proyectos {
-    padding-bottom: 2rem;
-
-    & h1 {
-      margin-bottom: 2rem;
-    }
+    padding: 2rem 0;
 
     & p {
-      margin: 0 auto 2rem;
+      margin: 0 auto;
       width: 75%;
       max-width: 1000px;
     }
@@ -30,22 +26,32 @@ const pageTitle = "Proyectos · Gato Rojo Lab";
     & ul {
       margin: 0 auto;
       width: 90%;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2.5rem;
+      max-width: 800px;
       list-style: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .proyectos {
+      & ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+        margin: 0 auto;
+      }
     }
   }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="proyectos">
-    <h1>Proyectos</h1>
-    <p>
+    <p style="font-size: 1.5rem; text-align: center">
       Estos son algunos de los proyectos que hemos realizado. Si ve alguno que
-      le guste, no dude en mencionarlo cuando nos <a href="/contacto" class="linkContacto" >reunamos</a>.
+      le guste, no dude en mencionarlo cuando nos <a
+        href="/contacto"
+        class="linkContacto">reunamos</a
+      >.
     </p>
 
     <ul>

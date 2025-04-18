@@ -2,7 +2,7 @@
 // layout
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = 'Acerca de · Gato Rojo Lab'
+const pageTitle = "Acerca de · Gato Rojo Lab";
 ---
 
 <style>
@@ -19,15 +19,23 @@ const pageTitle = 'Acerca de · Gato Rojo Lab'
       backdrop-filter: blur(5px);
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .acerca-de {
+      & p {
+        /* font-size: 1.4rem; */
+        width: 90%;
+      }
+    }
+  }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="acerca-de">
-    <h1>Acerca de</h1>
-
     <p>
       Gato Rojo Lab se enfoca en soluciones web funcionales, minimalistas y
-      accesibles, dónde lo más importante es la Experiencia de la Persona Usuaria.
+      accesibles, dónde lo más importante es la Experiencia de la Persona
+      Usuaria.
     </p>
     <p>
       Ya sea que necesite una Landing Page, una Tienda en Línea para vender sus
@@ -41,7 +49,13 @@ const pageTitle = 'Acerca de · Gato Rojo Lab'
       creatividad y la accesibilidad una forma ideal de atraer y mantener a sus
       clientes.
     </p>
-    <p>Estas son algunas de las tecnologías que más usamos para que las aplicaciones o sitios web tengan una carga rápida: Astro, React, Zustand, Wouter, CSS puro.</p>
-    <p>Visite la sección de Proyectos para ver un poco de lo que podemos lograr.</p>
+    <p>
+      Estas son algunas de las tecnologías que más usamos para que las
+      aplicaciones o sitios web tengan una carga rápida: Astro, React, Zustand,
+      Wouter, CSS puro.
+    </p>
+    <p>
+      Visite la sección de Proyectos para ver un poco de lo que podemos lograr.
+    </p>
   </section>
 </BaseLayout>

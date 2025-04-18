@@ -12,13 +12,8 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     max-width: 800px;
     margin: 0 auto;
 
-    & h1 {
-      font-size: 2.5rem;
-      margin: 0 auto 1rem;
-    }
-
     & p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       margin: 1rem auto;
       width: 100%;
       max-width: 800px;
@@ -28,10 +23,22 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
 
     & ul {
       margin: 1rem auto 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    
 
       & li {
         list-style: none;
-        margin: 2rem auto;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .servicios {
+      & ul {
+        width: 90%;
       }
     }
   }
@@ -39,7 +46,6 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="servicios">
-    <h1>Servicios que ofrecemos</h1>
     <ul>
       <li>
         <p>
@@ -111,9 +117,7 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
       </li>
     </ul>
 
-    <p
-      style="text-align: center; font-weight: bolder; font-size: 2rem; line-height: 2.5rem;" class="linkContactoP"
-    >
+    <p class="linkContactoP">
       Para conocer el precio base de cada servicio no dude en <a
         href="/contacto"
         class="linkContacto">contactarnos</a

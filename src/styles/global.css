@@ -92,6 +92,10 @@ h2 {
       border: 3px solid whitesmoke;
     }
   }
+
+  & .linkContacto {
+    padding: 0.05rem;
+  }
 }
 
 .light {
@@ -119,6 +123,11 @@ h2 {
       background-color: #b51f26;
       border-radius: 5px;
     }
+  }
+
+  & .linkContacto {
+    padding: 0.05rem;
+    border-bottom: none;
   }
 }
 
@@ -165,6 +174,10 @@ h2 {
       border-radius: 5px;
       transform: scale(1.1);
     }
+  }
+
+  & .linkContacto {
+    padding: 0.05rem;
   }
 }
 
@@ -213,6 +226,10 @@ h2 {
       width: 90%;
     }
   }
+
+  & .linkContacto {
+    padding: 0.05rem;
+  }
 }
 
 .gamer {
@@ -225,6 +242,10 @@ h2 {
   .linkContactoP,
   .proyectoH3 {
     color: white;
+  }
+
+  & .linkContactoP {
+    font-size: 1rem !important;
   }
 
   & h1 {
@@ -249,11 +270,6 @@ h2 {
       border-radius: 5px;
     }
   }
-}
-
-.linkContacto {
-  border: none !important;
-  padding: 0.05rem !important;
 }
 
 /* Menu´s */

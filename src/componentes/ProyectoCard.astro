@@ -6,8 +6,9 @@ const { name, tags, description, emoji, link } = Astro.props as PropsCard;
 
 <style>
   li {
-    width: 300px;
+    /* max-width: 300px; */
     backdrop-filter: blur(5px);
+    padding: 2rem;
 
     & h3 {
       font-size: 1.5rem;
@@ -16,6 +17,7 @@ const { name, tags, description, emoji, link } = Astro.props as PropsCard;
 
     & p {
       margin: 0.5rem 0;
+      font-size: 1.2rem;
     }
 
     & .emoji {
@@ -23,7 +25,7 @@ const { name, tags, description, emoji, link } = Astro.props as PropsCard;
     }
 
     & .tags {
-      font-size: 0.8rem;
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
 
@@ -32,6 +34,15 @@ const { name, tags, description, emoji, link } = Astro.props as PropsCard;
     }
   }
 
+  @media (max-width: 768px) {
+    li {
+      & p {
+        width: 400px;
+        /* margin: 0 auto 2rem; */
+        /* max-width: 100%; */
+      }
+    }
+  }
 </style>
 
 <li>

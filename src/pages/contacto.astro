@@ -26,11 +26,18 @@ import "../styles/Contact.module.css";
     }
   }
 
+  @media only screen and (max-width: 768px) {
+    .contacto {
+      & p {
+        width: 98%;
+      }
+    }
+  }
+
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="contacto">
-    <h1>Contacto</h1>
     <p>
       Nos encantaría trabajar con usted o su equipo para crear ese proyecto web
       que siempre ha estado en su mente.
