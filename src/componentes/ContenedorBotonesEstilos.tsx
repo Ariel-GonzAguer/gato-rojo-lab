@@ -66,6 +66,9 @@ export default function ContenedorBotonesEstilos() {
       <Toaster position="bottom-center" />
       <button
         ref={(el) => addButtonRef(el, 0)}
+        aria-label="Botón 1"
+        role="button"
+        tabIndex={0}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neumorphism ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.neumorphism)}
       >
@@ -74,6 +77,9 @@ export default function ContenedorBotonesEstilos() {
 
       <button
         ref={(el) => addButtonRef(el, 1)}
+        aria-label="Botón 2"
+        role="button"
+        tabIndex={0}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.dark ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.dark)}
       >
@@ -82,6 +88,9 @@ export default function ContenedorBotonesEstilos() {
 
       <button
         ref={(el) => addButtonRef(el, 2)}
+        aria-label="Botón 3"
+        role="button"
+        tabIndex={0}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.gamer ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.gamer)}
       >
@@ -90,6 +99,9 @@ export default function ContenedorBotonesEstilos() {
 
       <button
         ref={(el) => addButtonRef(el, 3)}
+        aria-label="Botón 4"
+        role="button"
+        tabIndex={0}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.light ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.light)}
       >
@@ -98,6 +110,9 @@ export default function ContenedorBotonesEstilos() {
 
       <button
         ref={(el) => addButtonRef(el, 4)}
+        aria-label="Botón 5"
+        role="button"
+        tabIndex={0}
         className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neubrutalism ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.neubrutalism)}
       >
