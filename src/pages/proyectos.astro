@@ -24,21 +24,26 @@ const pageTitle = "Proyectos · Gato Rojo Lab";
     }
 
     & ul {
-      margin: 0 auto;
+      margin: 2rem auto;
       width: 90%;
-      max-width: 800px;
+      max-width: 1200px;
       list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0;
+      justify-content: center;
     }
   }
 
   @media (max-width: 768px) {
     .proyectos {
       & ul {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: stretch;
-        margin: 0 auto;
+        gap: 1rem;
+        width: 95%;
       }
     }
   }

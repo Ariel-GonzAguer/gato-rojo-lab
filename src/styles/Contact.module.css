@@ -12,16 +12,12 @@
     padding: 0.8rem 0 0.2rem;
   }
 
-  & input {
-    width: 50%;
-    min-width: 300px;
-  }
 
   & input[type="submit"] {
     margin-top: 0.6rem;
     padding: 0.6rem;
-    width: 250px;
-
+    width: fit-content;
+    min-width: 200px;
   }
 
   & .dark {
@@ -110,8 +106,7 @@
   & input[type="text"],
   input[type="email"] {
     padding: 0.6rem;
-    width: 50%;
-    min-width: 300px;
+    width: 350px;
     height: 2rem;
     font-size: 1.2rem;
   }
@@ -119,7 +114,6 @@
   & textarea {
     min-height: 150px;
     width: 50%;
-    min-width: 300px;
     padding: 0.6rem;
     resize: none;
     field-sizing: content;
