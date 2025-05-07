@@ -55,7 +55,7 @@ h2 {
 @font-face {
   font-family: "PressStart2P";
   src: local("PressStart2P_Regular"),
-    url(/assets/fonts/PressStart2P/PressStart2P_Regular.ttf) format("truetype");
+    url(/assets/fonts/PressStart2P/PressStart2P_Regular.woff2) format("woff2");
 }
 
 /* contenedor estilos */
