@@ -9,36 +9,73 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
   .servicios {
     padding: 2rem;
     text-align: center;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 
     & p {
-      font-size: 1.4rem;
-      margin: 1rem auto;
+      font-size: 1.2rem;
+      margin: 0;
       width: 100%;
-      max-width: 800px;
       backdrop-filter: blur(5px);
-      line-height: 2rem;
+      line-height: 1.6;
     }
 
     & ul {
-      margin: 1rem auto 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    
+      margin: 1rem auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
 
-      & li {
-        list-style: none;
+    & li {
+      backdrop-filter: blur(5px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Patrón de alternancia para ocupar 2 columnas */
+      &:nth-child(4n + 1) {
+        grid-column: span 2;
+      }
+
+      &:nth-child(4n + 2) {
+        grid-column: span 1;
+      }
+
+      &:nth-child(4n + 3) {
+        grid-column: span 1;
+      }
+
+      &:nth-child(4n + 4) {
+        grid-column: span 2;
       }
     }
+  }
+
+  .linkContactoP {
+    margin-top: 2rem !important;
+    font-size: 1.4rem !important;
   }
 
   @media only screen and (max-width: 768px) {
     .servicios {
       & ul {
-        width: 90%;
+        grid-template-columns: 1fr;
+        width: 95%;
+        gap: 1rem;
+      }
+
+      & li {
+        grid-column: span 1 !important;
       }
     }
   }
@@ -49,70 +86,68 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     <ul>
       <li>
         <p>
-          <strong class="strong">Desarrollo Web Personalizado:</strong><br /> Creación
-          de sitios web funcionales, minimalistas y accesibles, incluyendo landing
+          <strong class="strong">Desarrollo Web Personalizado</strong><br /> 
+          Creación de sitios web funcionales, minimalistas y accesibles, incluyendo landing
           pages, blogs, tiendas en línea y portafolios.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong"
-            >Optimización para Motores de Búsqueda (SEO):</strong
-          ><br /> Implementación de metaetiquetas, datos estructurados, sitemaps
+          <strong class="strong">Optimización SEO</strong><br /> 
+          Implementación de metaetiquetas, datos estructurados, sitemaps
           y optimización de velocidad de carga.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Diseño Web Minimalista:</strong><br /> Creación
-          de interfaces limpias y atractivas, adaptadas a las necesidades del cliente.
+          <strong class="strong">Diseño Web Minimalista</strong><br /> 
+          Creación de interfaces limpias y atractivas, adaptadas a las necesidades del cliente.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Desarrollo Frontend:</strong><br /> Implementación
-          de componentes reutilizables con React y tecnologías modernas como Zustand.
+          <strong class="strong">Desarrollo Frontend</strong><br /> 
+          Implementación de componentes reutilizables con React y tecnologías modernas como Zustand.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Integración de APIs:</strong><br /> Configuración
-          de servicios como EmailJS para formularios de contacto y creación de APIs
+          <strong class="strong">Integración de APIs</strong><br /> 
+          Configuración de servicios como EmailJS para formularios de contacto y creación de APIs
           personalizadas.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Optimización de Imágenes y Recursos:</strong
-          ><br /> Uso de técnicas como lazy loading y compresión de imágenes para
+          <strong class="strong">Optimización de Recursos</strong><br /> 
+          Uso de técnicas como lazy loading y compresión de imágenes para
           mejorar el rendimiento.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Desarrollo JAMStack:</strong><br /> Creación de
-          sitios web rápidos y seguros con tecnologías JAMStack y despliegue en plataformas
+          <strong class="strong">Desarrollo JAMStack</strong><br /> 
+          Creación de sitios web rápidos y seguros con tecnologías JAMStack y despliegue en plataformas
           como Vercel.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Consultoría y Auditoría Web:</strong><br /> Revisión
-          de sitios existentes para mejorar rendimiento, accesibilidad y SEO.
+          <strong class="strong">Consultoría Web</strong><br /> 
+          Revisión de sitios existentes para mejorar rendimiento, accesibilidad y SEO.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong"
-            >Mantenimiento y Actualización de Sitios Web:</strong
-          ><br /> Actualización de contenido, estilos y funcionalidades, además de
+          <strong class="strong">Mantenimiento Web</strong><br /> 
+          Actualización de contenido, estilos y funcionalidades, además de
           resolución de errores.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Capacitación y Soporte Técnico:</strong><br /> Capacitación
-          en herramientas como Astro, React y CSS, además de soporte técnico continuo.
+          <strong class="strong">Capacitación Técnica</strong><br /> 
+          Capacitación en herramientas como Astro, React y CSS, además de soporte técnico continuo.
         </p>
       </li>
     </ul>
@@ -120,8 +155,7 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     <p class="linkContactoP">
       Para conocer el precio base de cada servicio no dude en <a
         href="/contacto"
-        class="linkContacto">contactarnos</a
-      >.
+        class="linkContacto">contactarnos</a>.
     </p>
   </section>
 </BaseLayout>
