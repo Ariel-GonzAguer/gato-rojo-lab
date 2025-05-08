@@ -10,10 +10,11 @@
   overflow: hidden;
   width: 350px;
   height: 100%;
-}
+  cursor: pointer;
 
-.card:hover {
-  transform: translateY(-5px);
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .title {
@@ -21,19 +22,6 @@
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
-}
-
-.descripcion {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.descripcion:hover {
-  opacity: 0.8;
 }
 
 .emoji {
@@ -50,7 +38,7 @@
 }
 
 .tags {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 1rem 0;
   position: relative;
   z-index: 1;
@@ -84,11 +72,12 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
-.closeButton:hover {
-  transform: scale(1.2);
-}
 
 @media (max-width: 768px) {
   .card {

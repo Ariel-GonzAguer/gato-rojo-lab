@@ -3,6 +3,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "Acerca de · Gato Rojo Lab";
+import MarqueeTecnologias from "../componentes/MarqueeTecnologias.astro";
 ---
 
 <style>
@@ -32,6 +33,8 @@ const pageTitle = "Acerca de · Gato Rojo Lab";
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="acerca-de">
+    <MarqueeTecnologias />
+
     <p>
       Gato Rojo Lab se enfoca en soluciones web funcionales, minimalistas y
       accesibles, dónde lo más importante es la Experiencia de la Persona
@@ -48,11 +51,6 @@ const pageTitle = "Acerca de · Gato Rojo Lab";
       Nos gusta trabajar con personas individuales y PYMES que ven en la
       creatividad y la accesibilidad una forma ideal de atraer y mantener a sus
       clientes.
-    </p>
-    <p>
-      Estas son algunas de las tecnologías que más usamos para que las
-      aplicaciones o sitios web tengan una carga rápida: Astro, React, Zustand,
-      Wouter, CSS puro.
     </p>
     <p>
       Visite la sección de Proyectos para ver un poco de lo que podemos lograr.

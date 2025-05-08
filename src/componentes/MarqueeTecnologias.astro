@@ -1,0 +1,163 @@
+---
+import useStore from "../store/useStore";
+import { Diseño } from "../types/types";
+const diseñoInStore = useStore.getState().diseñoInStore;
+
+const technologies = [
+  { name: "Astro", icon: "/assets/iconos/astro-svgrepo-com.svg" },
+  { name: "React", icon: "/assets/iconos/react-logo-svgrepo-com.svg" },
+  { name: "TypeScript", icon: "/assets/iconos/typeScript.svg" },
+  { name: "CSS", icon: "/assets/iconos/Official_CSS_Logo.svg" },
+  {
+    name: "JavaScript",
+    icon: "/assets/iconos/Unofficial_JavaScript_logo_2.svg",
+  },
+  { name: "Git", icon: "/assets/iconos/git-svgrepo-com.svg" },
+  { name: "GitHub", icon: "/assets/iconos/github-svgrepo-com.svg" },
+  { name: "Firebase", icon: "/assets/iconos/firebase-svgrepo-com.svg" },
+  { name: "Cloudinary", icon: "/assets/iconos/cloudinary-svgrepo-com.svg" },
+  { name: "Netlify", icon: "/assets/iconos/netlify.svg" },
+  { name: "Vercel", icon: "/assets/iconos/vercel-fill-svgrepo-com.svg" },
+  { name: "Vite", icon: "/assets/iconos/vite-svgrepo-com.svg" },
+  { name: "Vitest", icon: "/assets/iconos/vitest-logo.svg" },
+  { name: "React Router", icon: "/assets/iconos/reactrouter.svg" },
+  { name: "Redux", icon: "/assets/iconos/redux.svg" },
+  { name: "Tailwind", icon: "/assets/iconos/tailwind-svgrepo-com.svg" },
+  { name: "Zustand", icon: "/assets/iconos/zustand.ico" },
+];
+
+// Duplicamos el array para crear un efecto continuo
+const allTechnologies = [...technologies, ...technologies];
+---
+
+<style>
+  .marquee-section {
+    margin: 0 auto;
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+    width: 70%;
+    max-width: 600px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .marquee {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 45s linear infinite;
+    will-change: transform;
+    width: max-content;
+    padding: 0 1rem;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    min-width: 80px;
+  }
+
+  .tech-item:hover {
+    transform: scale(1.1);
+  }
+
+  .tech-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .tech-item span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 1rem));
+    }
+  }
+
+  .marquee-container:hover .marquee {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .marquee-section {
+      width: 90%;
+    }
+
+    .marquee {
+      gap: 1.5rem;
+    }
+
+    .tech-item {
+      min-width: 70px;
+    }
+
+    .tech-item img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .tech-item span {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<section class="marquee-section">
+  <h3>Tecnologías disponibles</h3>
+  <div class="marquee-container">
+    <div class="marquee">
+      {
+        allTechnologies.map((tech) => (
+          <div class="tech-item">
+            <img
+              src={tech.icon}
+              alt={tech.name}
+              style={{
+                backgroundColor: tech.name === "GitHub" ? "white" : "",
+                borderRadius: tech.name === "GitHub" ? "50%" : "",
+                boxShadow: tech.name === "GitHub" ? "inset 0 0 0 2px black" : "",
+              }}
+            />
+            <span>{tech.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

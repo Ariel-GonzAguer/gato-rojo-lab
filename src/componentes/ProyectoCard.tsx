@@ -3,12 +3,12 @@ import toast from 'react-hot-toast';
 import styles from "../styles/ProyectoCard.module.css";
 
 export default function ProyectoCard({ name, tags, description, emoji, link }: PropsCard) {
-  const handleDescriptionClick = () => {
+  function handleDescriptionClick() {
     toast.dismiss(); // Cerrar cualquier toast existente antes de mostrar uno nuevo
     toast((t) => (
       <div className={styles.toastContent}>
         <p>{description}</p>
-        <button 
+        <button
           onClick={() => toast.dismiss(t.id)}
           className={styles.closeButton}
           aria-label="Cerrar notificación"
@@ -35,7 +35,7 @@ export default function ProyectoCard({ name, tags, description, emoji, link }: P
   return (
     <li className={styles.card}>
       <h3 className={`proyectoH3 ${styles.title}`} translate="no">{name}</h3>
-      <p 
+      <p
         className={styles.descripcion}
         onClick={handleDescriptionClick}
         title="Click para ver descripción completa"

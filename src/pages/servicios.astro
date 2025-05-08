@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import useStore from "../store/useStore";
 
 const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
 ---
@@ -23,7 +22,7 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     & ul {
       margin: 1rem auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1.5rem;
       padding: 0;
       list-style: none;
@@ -36,27 +35,29 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
       height: 100%;
       display: flex;
       align-items: center;
-      transition: transform 0.3s ease;
+      transition: all 0.5s ease;
+      border: 1px solid transparent;
 
       &:hover {
         transform: translateY(-5px);
+        border: 1px solid red;
       }
 
       /* Patrón de alternancia para ocupar 2 columnas */
       &:nth-child(4n + 1) {
-        grid-column: span 2;
+        grid-column: span 3;
       }
 
       &:nth-child(4n + 2) {
-        grid-column: span 1;
+        grid-column: span 2;
       }
 
       &:nth-child(4n + 3) {
-        grid-column: span 1;
+        grid-column: span 2;
       }
 
       &:nth-child(4n + 4) {
-        grid-column: span 2;
+        grid-column: span 3;
       }
     }
   }
@@ -86,68 +87,58 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     <ul>
       <li>
         <p>
-          <strong class="strong">Desarrollo Web Personalizado</strong><br /> 
-          Creación de sitios web funcionales, minimalistas y accesibles, incluyendo landing
-          pages, blogs, tiendas en línea y portafolios.
+          <strong class="strong">Desarrollo Web Personalizado</strong><br />
+          Creación de sitios web funcionales, minimalistas y accesibles, incluyendo
+          landing pages, blogs, tiendas en línea y portafolios.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Optimización SEO</strong><br /> 
-          Implementación de metaetiquetas, datos estructurados, sitemaps
-          y optimización de velocidad de carga.
+          <strong class="strong">Optimización SEO</strong><br />
+          Implementación de metaetiquetas, datos estructurados, sitemaps y optimización
+          de velocidad de carga.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Diseño Web Minimalista</strong><br /> 
-          Creación de interfaces limpias y atractivas, adaptadas a las necesidades del cliente.
+          <strong class="strong">Diseño Web Minimalista</strong><br />
+          Creación de interfaces limpias y atractivas, adaptadas a las necesidades
+          del cliente.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Desarrollo Frontend</strong><br /> 
-          Implementación de componentes reutilizables con React y tecnologías modernas como Zustand.
+          <strong class="strong">Desarrollo Frontend</strong><br />
+          Implementación de componentes reutilizables con React y tecnologías modernas
+          como Zustand.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Integración de APIs</strong><br /> 
-          Configuración de servicios como EmailJS para formularios de contacto y creación de APIs
-          personalizadas.
+          <strong class="strong">Integración de APIs</strong><br />
+          Configuración de servicios como EmailJS para formularios de contacto y
+          creación de APIs personalizadas.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Optimización de Recursos</strong><br /> 
-          Uso de técnicas como lazy loading y compresión de imágenes para
-          mejorar el rendimiento.
+          <strong class="strong">Desarrollo JAMStack</strong><br />
+          Creación de sitios web rápidos y seguros con tecnologías JAMStack y despliegue
+          en plataformas como Vercel.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Desarrollo JAMStack</strong><br /> 
-          Creación de sitios web rápidos y seguros con tecnologías JAMStack y despliegue en plataformas
-          como Vercel.
+          <strong class="strong">Consultoría Web</strong><br />
+          Revisión de sitios existentes para mejorar rendimiento, accesibilidad y
+          SEO.
         </p>
       </li>
       <li>
         <p>
-          <strong class="strong">Consultoría Web</strong><br /> 
-          Revisión de sitios existentes para mejorar rendimiento, accesibilidad y SEO.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong class="strong">Mantenimiento Web</strong><br /> 
-          Actualización de contenido, estilos y funcionalidades, además de
-          resolución de errores.
-        </p>
-      </li>
-      <li>
-        <p>
-          <strong class="strong">Capacitación Técnica</strong><br /> 
-          Capacitación en herramientas como Astro, React y CSS, además de soporte técnico continuo.
+          <strong class="strong">Mantenimiento Web</strong><br />
+          Actualización de contenido, estilos y funcionalidades, además de resolución
+          de errores.
         </p>
       </li>
     </ul>
@@ -155,7 +146,8 @@ const pageTitle = "Servicios que Ofrecemos · Gato Rojo Lab";
     <p class="linkContactoP">
       Para conocer el precio base de cada servicio no dude en <a
         href="/contacto"
-        class="linkContacto">contactarnos</a>.
+        class="linkContacto">contactarnos</a
+      >.
     </p>
   </section>
 </BaseLayout>

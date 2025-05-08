@@ -19,7 +19,6 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
     padding: 1rem;
 
     & h1 {
-      /* margin: 1rem auto 0; */
       font-size: 5rem;
     }
 
@@ -32,11 +31,11 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
 
   @media only screen and (max-width: 500px) {
     .index {
-      justify-content: flex-start; /* En móviles, alinear desde arriba */
-      padding-top: 2rem; /* Dar espacio en la parte superior */
+      justify-content: flex-start;
+      padding-top: 2rem;
 
       & h1 {
-        font-size: 3rem; /* Reducir tamaño de fuente en móviles */
+        font-size: 3rem;
       }
     }
   }
@@ -50,8 +49,8 @@ import DescripciónEstilosP from "../componentes/DescripciónEstilosP";
       L<span>a</span>b
     </h1>
     <p>
-      Soluciones web funcionales, minimalistas y
-      accesibles, dónde lo más importante es la Experiencia de la Persona Usuaria.
+      Soluciones web funcionales, minimalistas y accesibles, dónde lo más
+      importante es la Experiencia de la Persona Usuaria.
     </p>
     <h2>Elige un estilo</h2>
     <ContenedorBotonesEstilos client:only="react" />
