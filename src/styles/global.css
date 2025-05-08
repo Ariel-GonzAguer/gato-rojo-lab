@@ -95,6 +95,7 @@ h2 {
 
   & .linkContacto {
     padding: 0.05rem;
+    text-decoration: none;
   }
 }
 
@@ -127,7 +128,7 @@ h2 {
 
   & .linkContacto {
     padding: 0.05rem;
-    border-bottom: none;
+    text-decoration: none;
   }
 }
 
@@ -178,6 +179,7 @@ h2 {
 
   & .linkContacto {
     padding: 0.05rem;
+    text-decoration: none;
   }
 }
 
@@ -228,6 +230,7 @@ h2 {
   }
 
   & .linkContacto {
+    text-decoration: none;
     padding: 0.05rem;
   }
 }

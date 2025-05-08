@@ -4,11 +4,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // componentes
 import ProyectoCard from "../componentes/ProyectoCard.astro";
+import { Toaster } from 'react-hot-toast';
 
 // agregar para content collection
 import { getCollection } from "astro:content";
 
-const allProyectos = await getCollection("proyectos"); // agregar para content collection
+const allProyectos = await getCollection("proyectos");
 
 const pageTitle = "Proyectos · Gato Rojo Lab";
 ---
@@ -55,10 +56,11 @@ const pageTitle = "Proyectos · Gato Rojo Lab";
       Estos son algunos de los proyectos que hemos realizado. Si ve alguno que
       le guste, no dude en mencionarlo cuando nos <a
         href="/contacto"
-        class="linkContacto">reunamos</a
-      >.
+        class="linkContacto">reunamos</a>.
     </p>
 
+    <Toaster client:load />
+    
     <ul>
       {
         allProyectos.map((proyecto: any) => (
