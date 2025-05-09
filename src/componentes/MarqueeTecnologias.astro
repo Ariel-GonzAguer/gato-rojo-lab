@@ -1,8 +1,4 @@
 ---
-import useStore from "../store/useStore";
-import { Diseño } from "../types/types";
-const diseñoInStore = useStore.getState().diseñoInStore;
-
 const technologies = [
   { name: "Astro", icon: "/assets/iconos/astro-svgrepo-com.svg" },
   { name: "React", icon: "/assets/iconos/react-logo-svgrepo-com.svg" },
@@ -17,7 +13,7 @@ const technologies = [
   { name: "Firebase", icon: "/assets/iconos/firebase-svgrepo-com.svg" },
   { name: "Cloudinary", icon: "/assets/iconos/cloudinary-svgrepo-com.svg" },
   { name: "Netlify", icon: "/assets/iconos/netlify.svg" },
-  { name: "Vercel", icon: "/assets/iconos/vercel-fill-svgrepo-com.svg" },
+  { name: "Vercel", icon: "/assets/iconos/vercel-logotype-light.svg" },
   { name: "Vite", icon: "/assets/iconos/vite-svgrepo-com.svg" },
   { name: "Vitest", icon: "/assets/iconos/vitest-logo.svg" },
   { name: "React Router", icon: "/assets/iconos/reactrouter.svg" },
@@ -92,6 +88,7 @@ const allTechnologies = [...technologies, ...technologies];
     width: 40px;
     height: 40px;
     object-fit: contain;
+    background-color: transparent;
     transition: transform 0.3s ease;
   }
 
@@ -149,9 +146,11 @@ const allTechnologies = [...technologies, ...technologies];
               src={tech.icon}
               alt={tech.name}
               style={{
-                backgroundColor: tech.name === "GitHub" ? "white" : "",
+                backgroundColor: tech.name === "GitHub" || tech.name === "Vercel" ? "white" : "",
                 borderRadius: tech.name === "GitHub" ? "50%" : "",
                 boxShadow: tech.name === "GitHub" ? "inset 0 0 0 2px black" : "",
+                padding: tech.name === "Vercel" ? "2px" : "",
+                border: tech.name === "JavaScript" ? "1px solid black" : "",
               }}
             />
             <span>{tech.name}</span>

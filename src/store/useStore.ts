@@ -7,10 +7,8 @@ import { Diseño } from "../types/types";
 const useStore = create<StoreState>()(
   persist(
     immer((set) => ({
-      // Estados
       diseñoInStore: Diseño.dark,
 
-      // Acciones
       cambiarDiseño: (estilo: Diseño) =>
         set((state) => {
           state.diseñoInStore = estilo;
