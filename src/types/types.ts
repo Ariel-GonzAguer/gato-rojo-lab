@@ -21,6 +21,7 @@ export interface DescripciónEstilo {
 }
 
 export interface PropsCard {
+  key: string;
   name: string;
   tags: string[];
   description: string;
