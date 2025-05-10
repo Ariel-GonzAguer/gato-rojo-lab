@@ -6,8 +6,28 @@ export default getViteConfig({
   plugins: [react()],
   test: {
     globals: true,
-    environment: 'jsdom',
     setupFiles: './tests/setup.ts',
-    include: ['tests/**/*.{test,spec}.{js,ts,jsx,tsx}']
+    include: ['src/**/*.{test}.{js,ts,jsx,tsx}'],
+    // configuración para poder testar componentes Astro en node y componentes React en jsdom
+    workspace: [
+      {
+        extends: true,
+        test: {
+          include: ['tests/**.test.{jsx,tsx}'],
+          environment: 'jsdom',
+          setupFiles: './tests/setup.ts',
+        },
+      },
+      {
+        extends: true,
+        test: {
+          include: ['tests/**.test.{js,ts}'],
+          environment: 'node',
+          setupFiles: './tests/setup.ts',
+        },
+      },
+    
+    ]
+    
   }
 });
