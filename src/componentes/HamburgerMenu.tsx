@@ -20,11 +20,11 @@ export default function HamburgerMenu() {
 
         {isOpen && (
           <div className={isOpen ? 'menu-open' : 'menu-closed'} aria-label="Opciones del menú">
-            <a href="/" onClick={() => setIsOpen(false)} aria-label="Ir a Inicio">Inicio</a>
-            <a href="/servicios" onClick={() => setIsOpen(false)} aria-label="Ir a Servicios">Servicios</a>
-            <a href="/proyectos" onClick={() => setIsOpen(false)} aria-label="Ir a Proyectos">Proyectos</a>
-            <a href="/acerca-de" onClick={() => setIsOpen(false)} aria-label="Ir a Acerca de">Acerca-de</a>
-            <a href="/contacto" onClick={() => setIsOpen(false)} aria-label="Ir a Contacto">Contacto</a>
+            <a href="/" onClick={() => setIsOpen(false)} aria-label="Ir a Inicio" data-testid="inicio">Inicio</a>
+            <a href="/servicios" onClick={() => setIsOpen(false)} aria-label="Ir a Servicios" data-testid="servicios">Servicios</a>
+            <a href="/proyectos" onClick={() => setIsOpen(false)} aria-label="Ir a Proyectos" data-testid="proyectos">Proyectos</a>
+            <a href="/acerca-de" onClick={() => setIsOpen(false)} aria-label="Ir a Acerca de" data-testid="acerca-de">Acerca-de</a>
+            <a href="/contacto" onClick={() => setIsOpen(false)} aria-label="Ir a Contacto" data-testid="contacto">Contacto</a>
           </div>
         )}
       </div>
