@@ -15,6 +15,7 @@ import "../styles/Contact.module.css";
   .contacto {
     padding: 1rem;
     text-align: center;
+    text-wrap: balance;
 
     & p {
       font-size: 1.4rem;
@@ -23,6 +24,10 @@ import "../styles/Contact.module.css";
       width: 75%;
       max-width: 800px;
       backdrop-filter: blur(5px);
+    }
+
+    span {
+      font-size: 2.5rem;
     }
   }
 
@@ -42,7 +47,8 @@ import "../styles/Contact.module.css";
       Nos encantaría trabajar con usted o su equipo para crear ese proyecto web
       que siempre ha estado en su mente.
     </p>
-    <p>Envíe un mensaje y le contactaremos lo antes posible 🚀</p>
+    <p>Envíe un mensaje y le contactaremos lo antes posible.</p>
+    <span>🚀</span>
     <ContactFormEmailJS client:only="react" />
   </section>
 </BaseLayout>

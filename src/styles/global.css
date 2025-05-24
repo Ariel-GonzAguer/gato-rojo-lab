@@ -101,16 +101,20 @@ h2 {
 
 .light {
   font-family: "Kanit_Regular", Arial, Helvetica, sans-serif;
-  color: rgb(217, 7, 7);
+  color: black;
   background-image: url("/assets/backgrounds/Gooey_x_SVG.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
 
+  & h1 {
+    color: rgb(217, 7, 7);
+  }
+
   & .strong,
   .proyectoH3 {
-    color: black;
+    color: rgb(217, 7, 7);
     font-weight: bolder;
   }
 
