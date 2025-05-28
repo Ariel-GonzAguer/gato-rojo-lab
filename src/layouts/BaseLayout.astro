@@ -44,7 +44,7 @@ const { pageTitle }: Props = Astro.props;
       http-equiv="Content-Security-Policy"
       content="
       default-src 'self';
-      script-src 'self' https://vercel.live https://analytics.vercel.com;
+      script-src 'self' 'unsafe-inline' https://vercel.live https://analytics.vercel.com;
       style-src 'self' 'unsafe-inline';
       img-src 'self' data: https://gatorojolab.com;
       font-src 'self';
