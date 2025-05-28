@@ -39,6 +39,27 @@ const { pageTitle }: Props = Astro.props;
       {pageTitle ?? "Gato Rojo Lab · Desarrollo web minimalista y práctico"}
     </title>
 
+    <!-- políticas de seguridad -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self';
+      script-src 'self' https://vercel.live https://analytics.vercel.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://gatorojolab.com;
+      font-src 'self';
+      connect-src 'self' https://analytics.vercel.com;
+      frame-src 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      manifest-src 'self';
+      media-src 'self';
+      worker-src 'self';
+      child-src 'self';
+    "
+    />
+
     <!-- Meta descripción -->
     <meta
       name="description"
