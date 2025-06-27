@@ -9,7 +9,8 @@
   /* Transición suave tipo fade para toda la página */
   ::view-transition-old(root),
   ::view-transition-new(root) {
-    animation-duration: 0.9s;
+    animation-duration: 1.2s;
+    /* animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
     animation-timing-function: ease-in-out;
   }
 
@@ -24,7 +25,8 @@
   /* Fade suave para elementos específicos */
   ::view-transition-old(*),
   ::view-transition-new(*) {
-    animation-duration: 0.9s;
+    animation-duration: 1.2s;
+    /* animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); */
     animation-timing-function: ease-in-out;
   }
 
@@ -34,7 +36,7 @@
       opacity: 1;
     }
     to {
-      opacity: 0.5;
+      opacity: 0;
     }
   }
 
