@@ -30,6 +30,12 @@
     animation-timing-function: ease-in-out;
   }
 
+  /* Header persistente - sin animación */
+  ::view-transition-old(main-header),
+  ::view-transition-new(main-header) {
+    animation: none;
+  }
+
   /* Animaciones de fade */
   @keyframes fade-out {
     from {

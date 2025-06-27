@@ -3,7 +3,7 @@ import Navigation from "./Navigation.astro";
 import HamburgerMenu from "./HamburgerMenu";
 ---
 
-<header aria-label="Encabezado principal del sitio">
+<header aria-label="Encabezado principal del sitio" style="view-transition-name: main-header;">
   <nav aria-label="Navegación principal">
     <HamburgerMenu client:only="react" />
     <Navigation />
