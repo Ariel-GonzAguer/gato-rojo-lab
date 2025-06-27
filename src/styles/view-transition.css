@@ -1,0 +1,60 @@
+/* View Transitions nativas del navegador únicamente */
+@media (prefers-reduced-motion: no-preference) {
+  
+  /* View Transitions nativas - se activan automáticamente cuando están disponibles */
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Transición suave tipo fade para toda la página */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;
+  }
+
+  ::view-transition-old(root) {
+    animation-name: fade-out;
+  }
+
+  ::view-transition-new(root) {
+    animation-name: fade-in;
+  }
+
+  /* Fade suave para elementos específicos */
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* Animaciones de fade */
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Ocultar el route announcer de Astro (accesibilidad) */
+.astro-route-announcer {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  white-space: nowrap !important;
+}

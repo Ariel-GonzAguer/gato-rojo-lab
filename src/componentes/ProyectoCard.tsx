@@ -34,7 +34,7 @@ export default function ProyectoCard({key, name, tags, description, emoji, link 
   };
 
   return (
-    <li className={styles.card} key={key}>
+    <li className={styles.card} key={key} style={{ viewTransitionName: `card-${name.replace(/\s+/g, '-').toLowerCase()}` }}>
       <h3 data-testid="proyectoH3" className={`proyectoH3 ${styles.title}`} translate="no">{name}</h3>
       <p
         data-testid="proyectoP"

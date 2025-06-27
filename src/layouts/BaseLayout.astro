@@ -5,8 +5,8 @@ import type { Props } from "../types/types.ts";
 // estilos globales
 import "../styles/global.css";
 
-// view transition
-import { ClientRouter } from "astro:transitions";
+// view transition nativa
+import "../styles/view-transition.css";
 
 // componentes
 import StructuredData from "../componentes/StructuredData.astro";
@@ -26,6 +26,8 @@ const { pageTitle }: Props = Astro.props;
     <link rel="icon" type="image/png" href="/assets/imgs/cat-favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <!-- view transition nativa -->
+    <meta name="view-transition" content="same-origin" />
     <meta
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
@@ -67,7 +69,17 @@ const { pageTitle }: Props = Astro.props;
     <!-- Structured Data -->
     <StructuredData />
 
-    <ClientRouter />
+    <!-- View Transition Detection & Debugging -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if ('startViewTransition' in document) {
+          console.log('✅ View Transitions nativas activas');
+        } else {
+          console.log('⚠️ View Transitions nativas no soportadas en este navegador');
+        }
+      });
+    </script>
+
   </head>
   <ContenedorEstilos client:only="react">
     <body>
