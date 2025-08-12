@@ -4,22 +4,29 @@ export default async function handler(req, res) {
     return;
   }
 
-  // El reporte CSP puede venir en req.body o como texto plano
-  let report = req.body;
-  if (typeof report === 'string') {
+  try {
+    // Leer cuerpo raw para cubrir content-types como application/csp-report o application/reports+json
+    const chunks = [];
+    for await (const chunk of req) chunks.push(chunk);
+    const raw = Buffer.concat(chunks).toString('utf8');
+
+    let payload = null;
     try {
-      report = JSON.parse(report);
+      payload = raw ? JSON.parse(raw) : req.body ?? null;
     } catch (e) {
-      // Si no es JSON válido, lo dejamos como string
+      // Puede venir como texto plano
+      payload = raw || req.body || null;
     }
+
+    // Estándares posibles:
+    // - application/csp-report => { "csp-report": { ... } }
+    // - application/reports+json => { "type": "csp-violation", ... }
+    const report = payload?.["csp-report"] ?? payload ?? null;
+
+    console.log('CSP Report:', report);
+  } catch (err) {
+    console.error('Error procesando CSP report:', err);
   }
 
-  // Imprime el reporte en consola (puedes guardar en archivo si lo prefieres)
-  console.log('CSP Report:', report);
-
-  // Opcional: guardar en archivo (solo en desarrollo/local)
-  // const fs = require('fs');
-  // fs.appendFileSync('csp-reports.log', JSON.stringify(report) + '\n');
-
-  res.status(204).end(); // Sin contenido
+  res.status(204).end(); // No Content
 }
