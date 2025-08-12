@@ -69,16 +69,8 @@ const { pageTitle }: Props = Astro.props;
     <!-- Structured Data -->
     <StructuredData />
 
-    <!-- View Transition Detection & Debugging -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        if ('startViewTransition' in document) {
-          console.log('✅ View Transitions nativas activas');
-        } else {
-          console.log('⚠️ View Transitions nativas no soportadas en este navegador');
-        }
-      });
-    </script>
+  <!-- View Transition Detection & Debugging -->
+  <script type="module" src="/scripts/view-transition-check.js"></script>
 
   </head>
   <ContenedorEstilos client:only="react">
