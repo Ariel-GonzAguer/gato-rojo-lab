@@ -11,13 +11,14 @@ export default defineConfig({
     csp: {
       // Algoritmo por defecto es SHA-256
       directives: [
-        "default-src 'self'",
+        "default-src 'none'",
         "img-src 'self' data: https://gatorojolab.com",
-  "font-src 'self' data:",
+        "font-src 'self' data:",
         "connect-src 'self' https://analytics.vercel.com https://api.emailjs.com",
         "frame-src 'none'",
         "object-src 'none'",
         "base-uri 'self'",
+        "frame-ancestors 'none'",
         "form-action 'self'",
         "manifest-src 'self'",
         "media-src 'self'",
