@@ -18,7 +18,6 @@ export default defineConfig({
         "frame-src 'none'",
         "object-src 'none'",
         "base-uri 'self'",
-        "frame-ancestors 'none'",
         "form-action 'self'",
         "manifest-src 'self'",
         "media-src 'self'",
