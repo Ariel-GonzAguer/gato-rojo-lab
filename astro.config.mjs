@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -14,6 +13,7 @@ export default defineConfig({
       directives: [
         "default-src 'self'",
         "img-src 'self' data: https://gatorojolab.com",
+  "font-src 'self' data:",
         "connect-src 'self' https://analytics.vercel.com https://api.emailjs.com",
         "frame-src 'none'",
         "object-src 'none'",

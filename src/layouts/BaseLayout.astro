@@ -15,6 +15,9 @@ import Header from "../componentes/Header.astro";
 // contenedor estilos
 import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
 
+// Permitir estilos en atributos (p.ej., style="...") sin relajar <style>
+// @ts-ignore - directiva CSP no tipada aún en Astro
+Astro.insertDirective("style-src-attr 'unsafe-inline'");
 // analítica
 import Analytics from "@vercel/analytics/astro";
 const { pageTitle }: Props = Astro.props;
@@ -69,9 +72,8 @@ const { pageTitle }: Props = Astro.props;
     <!-- Structured Data -->
     <StructuredData />
 
-  <!-- View Transition Detection & Debugging -->
-  <script type="module" src="/scripts/view-transition-check.js"></script>
-
+    <!-- View Transition Detection & Debugging -->
+    <script type="module" src="/scripts/view-transition-check.js"></script>
   </head>
   <ContenedorEstilos client:only="react">
     <body>
