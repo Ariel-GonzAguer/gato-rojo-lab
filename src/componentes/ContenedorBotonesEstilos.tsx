@@ -11,7 +11,7 @@ import { Diseño } from "../types/types";
 import { useEffect, useRef } from "react";
 
 // componentes
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from '../lib/toast';
 
 export default function ContenedorBotonesEstilos() {
   const { cambiarDiseño, diseñoInStore } = useStore();
@@ -63,7 +63,7 @@ export default function ContenedorBotonesEstilos() {
 
   return (
     <section className={styles.contenedorEstilos}>
-      <Toaster position="bottom-center" />
+  <Toaster />
       <button
         ref={(el) => addButtonRef(el, 0)}
         aria-label="Botón 1"

@@ -3,12 +3,13 @@ import { render } from '@testing-library/react';
 import ProyectoCard from '../src/componentes/ProyectoCard';
 
 // Asegúrate de que el mock esté correctamente configurado
-vi.mock("react-hot-toast", () => {
+vi.mock("../src/lib/toast", () => {
   return {
     toast: {
       success: vi.fn(),
       error: vi.fn(),
       dismiss: vi.fn(),
+      custom: vi.fn(),
     },
     Toaster: () => <div data-testid="mock-toaster" />
   };

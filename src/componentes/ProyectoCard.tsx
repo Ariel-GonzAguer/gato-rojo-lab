@@ -1,15 +1,15 @@
 import type { PropsCard } from "../types/types";
-import { toast } from 'react-hot-toast';
+import { toast } from '../lib/toast';
 import styles from "../styles/ProyectoCard.module.css";
 
 export default function ProyectoCard({key, name, tags, description, emoji, link }: PropsCard) {
   function handleDescriptionClick() {
     toast.dismiss(); // Cerrar cualquier toast existente antes de mostrar uno nuevo
-    toast((t) => (
+    toast.custom((t) => (
       <div data-testid="toasterDescripcion" className={styles.toastContent}>
         <p>{description}</p>
         <button
-          onClick={() => toast.dismiss(t.id)}
+      onClick={() => toast.dismiss(t.id)}
           className={styles.closeButton}
           aria-label="Cerrar notificación"
           data-testid="cerrarToast"
@@ -17,20 +17,7 @@ export default function ProyectoCard({key, name, tags, description, emoji, link 
           ✕
         </button>
       </div>
-    ), {
-      id: `toast-${name}`,
-      duration: 20000,
-      position: 'top-center',
-      style: {
-        background: 'rgba(0, 0, 0, 0.8)',
-        color: '#fff',
-        backdropFilter: 'blur(10px)',
-        maxWidth: '500px',
-        fontSize: '1rem',
-        padding: '1rem',
-        lineHeight: '2rem',
-      },
-    });
+    ), { id: `toast-${name}`, duration: 20000, position: 'top-center' });
   };
 
   return (
