@@ -1,5 +1,5 @@
 import type { PropsCard } from "../types/types";
-import { toast } from 'react-hot-toast';
+import toast from './Toast';
 import styles from "../styles/ProyectoCard.module.css";
 
 export default function ProyectoCard({key, name, tags, description, emoji, link }: PropsCard) {
@@ -21,15 +21,7 @@ export default function ProyectoCard({key, name, tags, description, emoji, link 
       id: `toast-${name}`,
       duration: 20000,
       position: 'top-center',
-      style: {
-        background: 'rgba(0, 0, 0, 0.8)',
-        color: '#fff',
-        backdropFilter: 'blur(10px)',
-        maxWidth: '500px',
-        fontSize: '1rem',
-        padding: '1rem',
-        lineHeight: '2rem',
-      },
+      className: styles.toastContent,
     });
   };
 

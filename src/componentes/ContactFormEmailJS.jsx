@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 // componentes/librerías
 import emailjs from "@emailjs/browser";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "./Toast";
 
 
 // estilos
@@ -42,7 +42,7 @@ export default function ContactFormEmailJS() {
 
   return (
     <form ref={form} onSubmit={sendEmail} className={styles.form}>
-      <Toaster richColors position="bottom-center" closeButton />
+  <Toaster />
 
       <label htmlFor="user_name">Nombre</label>
       <input
