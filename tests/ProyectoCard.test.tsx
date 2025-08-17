@@ -3,14 +3,14 @@ import { render } from '@testing-library/react';
 import ProyectoCard from '../src/componentes/ProyectoCard';
 
 // Asegúrate de que el mock esté correctamente configurado
-vi.mock("../src/lib/toast", () => {
+vi.mock("../src/componentes/Toast", () => {
   return {
-    toast: {
+    default: Object.assign((msg: any) => msg, {
       success: vi.fn(),
       error: vi.fn(),
       dismiss: vi.fn(),
-      custom: vi.fn(),
-    },
+      custom: vi.fn()
+    }),
     Toaster: () => <div data-testid="mock-toaster" />
   };
 });
@@ -23,16 +23,15 @@ describe('Componente ProyectoCard', () => {
   });
 
   const mockProps = {
-    key: '1',
     name: 'Test Project',
-    tags: ['React', 'TypeScript'],
+    tags: ['React', 'TypeScript'] as string[],
     description: 'Test description',
     emoji: '🚀',
     link: 'https://test.com'
   };
 
   it('renderiza correctamente con las props proporcionadas', () => {
-    const { getByText, getByTitle } = render(<ProyectoCard {...mockProps} />);
+  const { getByText, getByTitle } = render(<ProyectoCard key="1" {...mockProps} />);
 
     expect(getByText('Test Project')).toBeInTheDocument();
     expect(getByText('React, TypeScript')).toBeInTheDocument();
@@ -42,7 +41,7 @@ describe('Componente ProyectoCard', () => {
   });
 
   it('el enlace tiene los atributos correctos', () => {
-    const { getByText } = render(<ProyectoCard {...mockProps} />);
+  const { getByText } = render(<ProyectoCard key="1" {...mockProps} />);
     const link = getByText('Ver Proyecto');
 
     expect(link).toHaveAttribute('href', 'https://test.com');

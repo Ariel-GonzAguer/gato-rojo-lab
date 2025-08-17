@@ -11,7 +11,7 @@ import { Diseño } from "../types/types";
 import { useEffect, useRef } from "react";
 
 // componentes
-import toast, { Toaster } from '../lib/toast';
+import toast, { Toaster } from './Toast';
 
 export default function ContenedorBotonesEstilos() {
   const { cambiarDiseño, diseñoInStore } = useStore();

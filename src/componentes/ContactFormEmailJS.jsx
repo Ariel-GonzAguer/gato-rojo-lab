@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 // componentes/librerías
 import emailjs from "@emailjs/browser";
-import toast, { Toaster } from '../lib/toast';
+import toast, { Toaster } from "./Toast";
 
 
 // estilos

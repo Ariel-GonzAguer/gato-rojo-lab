@@ -1,5 +1,5 @@
 import type { PropsCard } from "../types/types";
-import { toast } from '../lib/toast';
+import toast from './Toast';
 import styles from "../styles/ProyectoCard.module.css";
 
 export default function ProyectoCard({key, name, tags, description, emoji, link }: PropsCard) {
@@ -17,7 +17,12 @@ export default function ProyectoCard({key, name, tags, description, emoji, link 
           ✕
         </button>
       </div>
-    ), { id: `toast-${name}`, duration: 20000, position: 'top-center' });
+    ), {
+      id: `toast-${name}`,
+      duration: 20000,
+      position: 'top-center',
+      className: styles.toastContent,
+    });
   };
 
   return (
