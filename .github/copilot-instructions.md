@@ -9,5 +9,6 @@ Cuando se genere un mensaje de commit:
 - Describir claramente el cambio realizado.
 - No usar frases en inglés.
 
-Este proyecto usa Astro, React, Vercel, Zustand.
-Antes de responder algo sobre Astro use la documentación oficial usando contex7.
+Este proyecto usa Astro, React, Vercel y Zustand.
+Antes de proponer cambios sobre Astro, consulte la documentación oficial usando Context7.
+Tenga en cuenta las características y limitaciones de estas tecnologías al realizar cambios.

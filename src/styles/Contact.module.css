@@ -13,11 +13,15 @@
   }
 
 
-  & input[type="submit"] {
+  & input[type="submit"], input, textarea {
     margin-top: 0.6rem;
     padding: 0.6rem;
     width: fit-content;
     min-width: 200px;
+
+    &:focus-visible {
+      outline: 6px solid red;
+    }
   }
 
   & .dark {

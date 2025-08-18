@@ -66,6 +66,12 @@ h2 {
   z-index: 1;
 }
 
+.estilo-focus {
+  &:focus-visible {
+    outline: 6px solid red;
+  }
+}
+
 .dark {
   font-family: "Roboto_Mono", Arial, Helvetica, sans-serif;
   background-image: url("/assets/backgrounds/Firefly_SVG.svg");
@@ -296,6 +302,10 @@ h2 {
     font-size: 1.5rem;
     font-weight: bolder;
     width: fit-content;
+
+    &:focus-visible {
+      outline: 6px solid red;
+    }
   }
 }
 
