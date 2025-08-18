@@ -69,7 +69,7 @@ export default function ContenedorBotonesEstilos() {
         aria-label="Botón 1"
         role="button"
         tabIndex={0}
-        className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neumorphism ? styles.selected : ''}`}
+        className={`estilo-focus ${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neumorphism ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.neumorphism)}
       >
         Neumorphism
@@ -80,7 +80,7 @@ export default function ContenedorBotonesEstilos() {
         aria-label="Botón 2"
         role="button"
         tabIndex={0}
-        className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.dark ? styles.selected : ''}`}
+        className={`estilo-focus ${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.dark ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.dark)}
       >
         Dark
@@ -91,7 +91,7 @@ export default function ContenedorBotonesEstilos() {
         aria-label="Botón 3"
         role="button"
         tabIndex={0}
-        className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.gamer ? styles.selected : ''}`}
+        className={`estilo-focus ${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.gamer ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.gamer)}
       >
         Gamer
@@ -102,7 +102,7 @@ export default function ContenedorBotonesEstilos() {
         aria-label="Botón 4"
         role="button"
         tabIndex={0}
-        className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.light ? styles.selected : ''}`}
+        className={`estilo-focus ${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.light ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.light)}
       >
         Light
@@ -113,7 +113,7 @@ export default function ContenedorBotonesEstilos() {
         aria-label="Botón 5"
         role="button"
         tabIndex={0}
-        className={`${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neubrutalism ? styles.selected : ''}`}
+        className={`estilo-focus ${styles[`${diseñoInStore}`]} ${diseñoInStore === Diseño.neubrutalism ? styles.selected : ''}`}
         onClick={() => handleDiseño(Diseño.neubrutalism)}
       >
         Neubrutalism
