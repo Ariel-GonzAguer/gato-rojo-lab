@@ -3,3 +3,12 @@
 Contact: ariegonzaguer@gmail.com
 
 If you find some vulnerability, please contact me 😁✌🏼
+
+# Security Measures Implemented
+# - Input validation and sanitization in contact forms
+# - Rate limiting for form submissions  
+# - Content Security Policy (CSP) headers
+# - XSS protection mechanisms
+# - Secure EmailJS configuration with environment variables
+# 
+# For detailed security documentation, see SECURITY.md
