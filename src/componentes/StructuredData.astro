@@ -36,7 +36,7 @@ const ld = {
 };
 
 const json = JSON.stringify(ld);
-const hash = (`sha256-${createHash('sha256').update(json, 'utf8').digest('base64')}`) as `sha256-${string}`;
-// La CSP experimental de Astro 5 genera hashes automáticamente
+// La CSP experimental de Astro 5 genera hashes automáticamente. La línea siguiente es solo para referencia.
+// const hash = (`sha256-${createHash('sha256').update(json, 'utf8').digest('base64')}`) as `sha256-${string}`;
 ---
-<script type="application/ld+json" set:html={hash}></script>
+<script type="application/ld+json" set:html={json}></script>
