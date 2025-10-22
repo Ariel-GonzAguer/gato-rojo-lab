@@ -13,7 +13,8 @@ export default defineConfig({
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
-    domains: ["localhost", "gatorojolab.com"],
+    // Remover localhost de dominios permitidos para producción
+    domains: ["gatorojolab.com"],
   },
   
   // Configuración de rendimiento
@@ -21,10 +22,19 @@ export default defineConfig({
     assets: "public", // Esto habilita el caché en la carpeta public
   },
   
-  // Deshabilitar Vercel Insights en modo local
+  // Configuración de seguridad
   vite: {
     optimizeDeps: {
       exclude: ['@vercel/analytics']
+    },
+    // Headers de seguridad para desarrollo
+    server: {
+      headers: {
+        'X-Frame-Options': 'DENY',
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      }
     }
   }
 });
