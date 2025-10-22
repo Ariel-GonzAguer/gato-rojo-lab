@@ -16,9 +16,6 @@ import Header from "../componentes/Header.astro";
 // contenedor estilos
 import ContenedorEstilos from "../layouts/ContenedorEstilos.tsx";
 
-// Permitir estilos en atributos (p.ej., style="...") sin relajar <style>
-// @ts-ignore - directiva CSP no tipada aún en Astro
-Astro.insertDirective("style-src-attr 'unsafe-inline'");
 // analítica
 import Analytics from "@vercel/analytics/astro";
 const { pageTitle }: Props = Astro.props;

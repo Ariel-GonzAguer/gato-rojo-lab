@@ -37,7 +37,6 @@ const ld = {
 
 const json = JSON.stringify(ld);
 const hash = (`sha256-${createHash('sha256').update(json, 'utf8').digest('base64')}`) as `sha256-${string}`;
-// Añadimos el hash del bloque JSON-LD a la CSP experimental de Astro
-Astro.insertScriptHash(hash);
+// La CSP experimental de Astro 5 genera hashes automáticamente
 ---
 <script type="application/ld+json" set:html={json}></script>
